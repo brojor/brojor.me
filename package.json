@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "nuxt preview",
+    "prepare": "pnpm dlx simple-git-hooks",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
@@ -22,6 +23,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.10.2",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "lint-staged": "^15.5.0",
     "simple-git-hooks": "^2.12.1"
   },
@@ -31,7 +34,8 @@
     ]
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "pnpm dlx commitlint --edit $1"
   },
   "lint-staged": {
     "*": "eslint --fix"
