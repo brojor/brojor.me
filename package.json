@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
+    "netlify-build": "cd node_modules/better-sqlite3 && npm run install && cd ../.. && nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "lint": "eslint .",

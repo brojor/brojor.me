@@ -1,0 +1,3 @@
+[build]
+command = "pnpm run netlify-build"
+publish = "dist"
