@@ -5,32 +5,38 @@ const currentLocale = computed(() => {
   return locales.value.find(loc => loc.code === locale.value)
 })
 
-const { data: post } = await useAsyncData(
+const { data: post, execute: fetchPost } = await useAsyncData(
   `post-${route.path}`,
-  () => queryCollection(locale.value)
-    .where('path', '=', route.path)
-    .first(),
-  { watch: [locale] },
-)
-const alternativeLocale = computed(() => locale.value === 'cs' ? 'en' : 'cs')
-const translationKey = post.value?.translationKey
-
-const { data: translatedPost } = await useAsyncData(
-  `translated-post-${translationKey}-${alternativeLocale.value}`,
   async () => {
-    if (!translationKey)
-      return null
-
-    return queryCollection(alternativeLocale.value)
-      .where('translationKey', '=', translationKey)
+    return queryCollection(locale.value)
+      .where('path', '=', route.path)
       .first()
   },
-  { watch: [post, locale] },
+  { immediate: false },
+)
+const alternativeLocale = computed(() => locale.value === 'cs' ? 'en' : 'cs')
+const translationKey = computed(() => post.value?.translationKey)
+
+const { data: translatedPost, execute: fetchTranslatedPost } = await useAsyncData(
+  `translated-post-${translationKey.value}-${alternativeLocale.value}`,
+  async () => {
+    if (!translationKey.value) {
+      return null
+    }
+
+    return queryCollection(alternativeLocale.value)
+      .where('translationKey', '=', translationKey.value)
+      .first()
+  },
+  { immediate: false },
 )
 
 async function switchLocale(code: 'en' | 'cs') {
   if (route.name?.toString().includes('blog-slug')) {
     setLocaleCookie(code)
+    await fetchPost()
+    await fetchTranslatedPost()
+
     navigateTo(translatedPost.value?.path)
   }
   else {
