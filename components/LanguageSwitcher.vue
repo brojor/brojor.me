@@ -1,27 +1,54 @@
 <script setup lang="ts">
-const { locale, setLocaleCookie, locales } = useI18n()
-
+const { locale, locales, setLocale, setLocaleCookie } = useI18n()
+const route = useRoute()
 const currentLocale = computed(() => {
   return locales.value.find(loc => loc.code === locale.value)
 })
 
-watch(locale, (newLocale) => {
-  setLocaleCookie(newLocale)
-})
+const { data: post } = await useAsyncData(
+  `post-${route.path}`,
+  () => queryCollection(locale.value)
+    .where('path', '=', route.path)
+    .first(),
+  { watch: [locale] },
+)
+const alternativeLocale = computed(() => locale.value === 'cs' ? 'en' : 'cs')
+const translationKey = post.value?.translationKey
 
-const switchLocalePath = useSwitchLocalePath()
+const { data: translatedPost } = await useAsyncData(
+  `translated-post-${translationKey}-${alternativeLocale.value}`,
+  async () => {
+    if (!translationKey)
+      return null
+
+    return queryCollection(alternativeLocale.value)
+      .where('translationKey', '=', translationKey)
+      .first()
+  },
+  { watch: [post, locale] },
+)
+
+async function switchLocale(code: 'en' | 'cs') {
+  if (route.name?.toString().includes('blog-slug')) {
+    setLocaleCookie(code)
+    navigateTo(translatedPost.value?.path)
+  }
+  else {
+    setLocale(code)
+  }
+}
 </script>
 
 <template>
   <div class="language-switcher">
-    <NuxtLink
+    <a
       v-for="loc in locales"
       :key="loc.code"
       :class="{ active: loc.code === currentLocale?.code }"
-      :to="switchLocalePath(loc.code)"
+      @click.prevent.stop="switchLocale(loc.code)"
     >
       {{ loc.code }}
-    </NuxtLink>
+    </a>
   </div>
 </template>
 
@@ -37,6 +64,8 @@ const switchLocalePath = useSwitchLocalePath()
 .language-switcher a {
   color: gray;
   text-decoration: none;
+  cursor: pointer;
+  user-select: none;
 }
 
 .language-switcher a.active {
