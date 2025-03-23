@@ -29,6 +29,5 @@ export default defineNuxtConfig({
       },
     ],
     baseUrl: 'https://brojor.me',
-    vueI18n: './i18n.config.ts',
   },
 })
