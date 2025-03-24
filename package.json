@@ -26,8 +26,10 @@
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@nuxtjs/i18n": "^9.3.3",
+    "@unocss/nuxt": "66.1.0-beta.6",
     "lint-staged": "^15.5.0",
-    "simple-git-hooks": "^2.12.1"
+    "simple-git-hooks": "^2.12.1",
+    "unocss": "66.1.0-beta.6"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
