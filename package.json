@@ -31,7 +31,8 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "simple-git-hooks"
+      "simple-git-hooks",
+      "better-sqlite3"
     ]
   },
   "simple-git-hooks": {
