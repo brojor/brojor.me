@@ -8,6 +8,7 @@ tags:
   - vue
   - nuxt
 translationKey: api-cache-implementation
+readingTime: 12
 ---
 
 # Implementing API Cache for Faster Data Loading

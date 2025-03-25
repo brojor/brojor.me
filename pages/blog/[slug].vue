@@ -13,10 +13,7 @@ const { data: post } = await useAsyncData(
 </script>
 
 <template>
-  <div>
-    <NuxtLinkLocale to="/blog">
-      {{ t('blog.back') }}
-    </NuxtLinkLocale>
+  <div class="prose prose-invert prose-zinc mx-auto px-4 md:px-0">
     <article v-if="post !== null">
       <p>{{ new Date(post.date).toLocaleDateString(locale) }}</p>
 
@@ -31,5 +28,8 @@ const { data: post } = await useAsyncData(
     <div v-else>
       <h1>{{ t('blog.notFound') }}</h1>
     </div>
+    <NuxtLinkLocale to="/blog" class="not-prose mt-8 text-xs inline-block">
+      {{ t('blog.back') }}
+    </NuxtLinkLocale>
   </div>
 </template>

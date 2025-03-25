@@ -1,5 +1,14 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
+const blogSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  date: z.date(),
+  tags: z.array(z.string()),
+  readingTime: z.number(),
+  translationKey: z.string(),
+})
+
 export default defineContentConfig({
   collections: {
     cs: defineCollection({
@@ -8,14 +17,7 @@ export default defineContentConfig({
         prefix: '/blog',
       },
       type: 'page',
-      schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        image: z.string().optional(),
-        date: z.date(),
-        tags: z.array(z.string()),
-        translationKey: z.string(),
-      }),
+      schema: blogSchema,
     }),
 
     en: defineCollection({
@@ -24,14 +26,7 @@ export default defineContentConfig({
         prefix: '/en/blog',
       },
       type: 'page',
-      schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        image: z.string().optional(),
-        date: z.date(),
-        tags: z.array(z.string()),
-        translationKey: z.string(),
-      }),
+      schema: blogSchema,
     }),
   },
 })

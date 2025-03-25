@@ -7,6 +7,7 @@ tags:
   - webdev
   - frontend
 translationKey: nuxt3-new-project
+readingTime: 12
 ---
 
 # Why I Chose Nuxt 3 for My New Project

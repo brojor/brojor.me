@@ -7,6 +7,7 @@ tags:
   - legacy-code
   - best-practices
 translationKey: legacy-code-refactoring
+readingTime: 12
 ---
 
 # Jak jsem refaktoroval legacy kód bez dodatečných chyb
