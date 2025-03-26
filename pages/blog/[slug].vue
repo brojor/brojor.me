@@ -15,8 +15,6 @@ const { data: post } = await useAsyncData(
 <template>
   <div class="prose prose-invert prose-zinc mx-auto px-4 md:px-0">
     <article v-if="post !== null">
-      <p>{{ new Date(post.date).toLocaleDateString(locale) }}</p>
-
       <ContentRenderer :value="post" />
 
       <div v-if="post.tags?.length">

@@ -1,4 +1,5 @@
 ---
+title: "Jak jsem refaktoroval legacy kód bez dodatečných chyb"
 description: Moje zkušenost s refaktoringem rozsáhlého legacy projektu pomocí testovací strategie a postupných změn, které přinesly očekávané výsledky.
 date: 2025-03-22
 tags:
@@ -10,6 +11,7 @@ translationKey: legacy-code-refactoring
 readingTime: 12
 ---
 
-# Jak jsem refaktoroval legacy kód bez dodatečných chyb
+::blog-post-header{:title="title" :date="date" :reading-time="readingTime"}
+::
 
 Práce s legacy kódem může být noční můrou každého vývojáře. Nedávno jsem se potýkal s rozsáhlým projektem, který nikdo nechtěl upravovat ze strachu z rozbití funkcionality. Nastavil jsem testovací strategii a postupný refaktoring, který přinesl očekávané výsledky bez negativních vedlejších efektů.

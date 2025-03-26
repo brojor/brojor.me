@@ -1,4 +1,5 @@
 ---
+title: "Implementace vícejazyčného blogu v Nuxt 3 s Content modulem"
 description: "Objevte postup vytvoření vícejazyčného blogu s Nuxt 3 a Content modulem. Naučte se organizovat obsah, propojit jazykové verze a optimalizovat URL pro dokonalé SEO ve Vue ekosystému."
 date: 2025-03-23
 tags:
@@ -11,7 +12,8 @@ translationKey: "multilingual-blog-nuxt-content"
 readingTime: 12
 ---
 
-# Implementace vícejazyčného blogu v Nuxt 3 s Content modulem
+::blog-post-header{:title="title" :date="date" :reading-time="readingTime"}
+::
 
 Když jsem začal psát blog o technologiích, které používám, narazil jsem na problém: jak nabídnout obsah v češtině i angličtině, aniž by to komplikovalo správu článků nebo zhoršilo SEO?
 
@@ -405,7 +407,7 @@ Toto řešení zajišťuje plynulý přechod mezi jazykovými verzemi článků 
 
 Nyní se podívejme, jak přesně funguje přepínání mezi jazyky v naší aplikaci. Následující diagram ilustruje interakci mezi jednotlivými komponentami:
 
-![Diagram](/diagram.png)
+![Diagram znázorňující interakci komponent](/diagram.png)
 
 Zatímco běžné stránky vyžadují pouze změnu locale, u detailu článku je potřeba navíc vyhledat odpovídající přeloženou verzi a zajistit správné přesměrování.
 

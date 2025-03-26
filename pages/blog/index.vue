@@ -26,11 +26,7 @@ const { data: posts } = await useAsyncData(
                 <h2 class="text-lg sm:text-xl leading-snug text-fg-deeper font-bold line-clamp-2">
                   {{ post.title }}
                 </h2>
-                <div class="space-x-1 text-sm leading-relaxed mt-2 text-fg/70">
-                  <time :datetime="new Date(post.date).toISOString().split('T')[0]">{{ new Date(post.date).toLocaleDateString(locale) }}</time>
-                  <span class="mx-2">·</span>
-                  <span>{{ post.readingTime }} min čtení</span>
-                </div>
+                <BlogMeta :date="post.date" :reading-time="post.readingTime" class="mt-2" />
               </header>
               <div class="leading-relaxed text-fg-deep line-clamp-3">
                 <p>{{ post.description }}</p>
