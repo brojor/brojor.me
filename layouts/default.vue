@@ -18,7 +18,10 @@ const head = useLocaleHead()
         </template>
       </Head> -->
       <Body class="bg-zinc-950 font-sans">
-        <LanguageSwitcher />
+        <header class="flex justify-between items-center px-8 py-4 border-b border-bg-deeper">
+          <img src="/logo.svg" alt="logo" class="w-24">
+          <LanguageSwitcher />
+        </header>
         <slot />
         <footer class="mt-8 border-t border-bg-deeper text-fg">
           <div class="max-w-[65ch] mx-auto">

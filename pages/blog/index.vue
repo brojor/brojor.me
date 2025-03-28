@@ -9,11 +9,11 @@ const { data: posts } = await useAsyncData(
 
 <template>
   <main role="main" class="text-fg max-w-[65ch] mx-auto font-normal px-2 md:px-0">
-    <section class="blog-header mb-6 md:mb-8">
+    <section class="blog-header my-6 md:my-8">
       <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-fg-deeper mb-4">
         Blog
       </h1>
-      <p class="text-base md:text-lg text-fg-deep max-w-2xl leading-relaxed">
+      <p class="text-fg-deep max-w-2xl leading-relaxed">
         S vášní pro Vue.js ekosystém a webové technologie sdílím praktické postřehy a elegantní řešení složitých vývojářských problémů.
       </p>
     </section>
