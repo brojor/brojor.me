@@ -13,7 +13,7 @@ const { data: post } = await useAsyncData(
 </script>
 
 <template>
-  <div class="prose prose-invert prose-zinc mx-auto px-4 md:px-0">
+  <div class="prose prose-invert prose-zinc mx-auto my-8 px-4 md:px-0">
     <ContentRenderer v-if="post !== null" :value="post" tag="article" />
     <div v-else>
       <h1>{{ t('blog.notFound') }}</h1>
