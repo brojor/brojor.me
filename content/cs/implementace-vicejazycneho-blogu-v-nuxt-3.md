@@ -17,7 +17,7 @@ readingTime: 12
 
 Když jsem začal psát blog o technologiích, které používám, narazil jsem na problém: jak nabídnout obsah v češtině i angličtině, aniž by to komplikovalo správu článků nebo zhoršilo SEO?
 
-Využití **Nuxt Content** a **Nuxt I18n** modulů se ukázalo jako ideální řešení. V tomto článku se s vámi podělím o svůj postup: od architektury adresářů přes propojení jazykových verzí až po optimalizaci URL a výkonu. Pokud se chystáte postavit vícejazyčný web nebo se chcete dozvědět, jak zvládnout lokalizaci v moderním Vue ekosystému, tento návod je právě pro vás.
+Využití **Nuxt Content** a **Nuxt I18n** modulů se ukázalo jako ideální řešení. V tomto článku se s vámi podělím o svůj postup: od architektury adresářů přes propojení jazykových verzí až po optimalizaci URL a výkonu. Pokud se chystáte postavit vícejazyčný web nebo se chcete dozvědět, jak zvládnout lokalizaci v moderním [Vue](https://vuejs.org/) ekosystému, tento návod je právě pro vás.
 
 ## Požadavky a cíle
 
@@ -30,9 +30,9 @@ Před zahájením implementace jsem si stanovil několik klíčových požadavk�
 5. **SEO optimalizace** - správné metadata pro každý jazyk.
 
 Pro implementaci jsem zvolil následující technologie:
-- **Nuxt 3** - jako základní framework pro vývoj aplikace
-- **@nuxt/content** - modul pro správu obsahu ve formátu Markdown
-- **@nuxtjs/i18n** - modul pro lokalizaci aplikace
+- [**Nuxt 3**](https://nuxt.com/) - jako základní framework pro vývoj aplikace
+- [**@nuxt/content**](https://content.nuxt.com/) - modul pro správu obsahu ve formátu Markdown
+- [**@nuxtjs/i18n**](https://i18n.nuxtjs.org/) - modul pro lokalizaci aplikace
 
 ## Architektura řešení
 
@@ -56,7 +56,7 @@ Tato struktura umožňuje snadnou navigaci a správu obsahu, přičemž jasně o
 
 ### Konfigurace Content modulu
 
-V souboru `content.config.ts` jsem definoval kolekce rozdělené podle jazyků, což umožňuje efektivní správu obsahu. Zásadním prvkem této konfigurace je parametr `prefix`, který zajišťuje správné generování URL adres pro články:
+V souboru `content.config.ts` jsem definoval [kolekce](https://content.nuxt.com/docs/collections/define) rozdělené podle jazyků, což umožňuje efektivní správu obsahu. Zásadním prvkem této konfigurace je parametr `prefix`, který zajišťuje správné generování URL adres pro články:
 
 ```typescript
 // content.config.ts
@@ -99,11 +99,11 @@ export default defineContentConfig({
 })
 ```
 
-Toto nastavení zajišťuje, že české články budou mít URL ve formátu `/blog/prvni-clanek` a anglické ve formátu `/en/blog/first-article`, což odpovídá naší strategii lokalizace URL.
+Toto nastavení zajišťuje, že české články budou mít URL ve formátu `/blog/prvni-clanek` a anglické ve formátu `/en/blog/first-article`, což odpovídá naší strategii lokalizace URL. Všimněte si použití property `schema`, která umožňuje definovat vlastní strukturu dat pomocí (Zod)[https://zod.dev/].
 
 ### Konfigurace i18n modulu
 
-Pro lokalizaci aplikace jsem použil strategii `prefix_except_default`, která zajišťuje čisté URL pro výchozí jazyk (čeština) a přidává prefix `/en/` pro anglickou verzi:
+Pro lokalizaci aplikace jsem použil [strategii](https://i18n.nuxtjs.org/docs/guide#strategies) `prefix_except_default`, která zajišťuje čisté URL pro výchozí jazyk (čeština) a přidává prefix `/en/` pro anglickou verzi:
 
 ```typescript
 // nuxt.config.ts
@@ -265,7 +265,7 @@ const { data: post } = await useAsyncData(
 </template>
 ```
 
-V detailu článku používám `ContentRenderer` komponentu, která automaticky renderuje Markdown obsah z Content modulu. Důležitým prvkem je použití `NuxtLinkLocale` místo běžného `NuxtLink`, což zajišťuje správné zachování aktuálního jazyka při navigaci.
+V detailu článku používám `ContentRenderer` komponentu, která automaticky renderuje [Markdown](https://content.nuxt.com/docs/files/markdown) obsah z Content modulu. Důležitým prvkem je použití `NuxtLinkLocale` místo běžného `NuxtLink`, což zajišťuje správné zachování aktuálního jazyka při navigaci.
 
 Pro zobrazení chybových zpráv a navigačních textů používám lokalizované texty z i18n konfigurace pomocí `t('blog.back')` a `t('blog.notFound')`, což zajišťuje konzistentní uživatelský zážitek v obou jazycích.
 
@@ -413,7 +413,7 @@ Zatímco běžné stránky vyžadují pouze změnu locale, u detailu článku je
 
 ## Integrace do layoutu
 
-Pro zajištění globální dostupnosti přepínače jazyků a správného nastavení HTML atributů podle aktivního jazyka jsem vytvořil univerzální layout:
+Pro zajištění globální dostupnosti přepínače jazyků a správného [nastavení HTML atributů](https://i18n.nuxtjs.org/docs/guide/seo) podle aktivního jazyka jsem vytvořil univerzální layout:
 
 ```vue
 <!-- layouts/default.vue -->
@@ -503,23 +503,3 @@ Moje řešení přináší několik zásadních výhod:
 Během této implementace jsem zjistil, že klíčem k úspěchu není jen technická stránka řešení, ale především důkladné promyšlení uživatelských potřeb. Pokud stojíte před podobnou výzvou, doporučuji nejprve jasně definovat požadavky na uživatelský zážitek a až poté hledat vhodné nástroje. Nuxt 3 s jeho ekosystémem se v mém případě ukázal jako vynikající základ, který jsem mohl přizpůsobit specifickým potřebám vícejazyčného webu.
 
 Celý tento proces pro mě byl cennou zkušeností. Troufám si říct, že se mi podařilo elegantně vyřešit komplexní problém. Sdílením těchto postupů doufám, že usnadním cestu dalším vývojářům, kteří chtějí vytvořit kvalitní vícejazyčné webové aplikace.
-
-## Užitečné zdroje a dokumentace
-
-Pro hlubší pochopení použitých technologií doporučuji následující zdroje:
-
-### Nuxt 3
-- [Oficiální dokumentace Nuxt 3](https://nuxt.com/docs)
-- [Nuxt 3 Content modul](https://content.nuxtjs.org/)
-
-### Lokalizace a i18n
-- [Nuxt i18n modul](https://i18n.nuxtjs.org/)
-- [Strategie lokalizace URL](https://i18n.nuxtjs.org/docs/guide#strategies)
-- [SEO a vícejazyčné aplikace](https://i18n.nuxtjs.org/docs/guide/seo)
-
-### Správa obsahu
-- [Nuxt Content kolekce](https://content.nuxt.com/docs/collections/define)
-- [Zod schémata](https://zod.dev/) - pro validaci obsahu
-- [Markdown rozšíření](https://content.nuxt.com/docs/files/markdown)
-
-Tyto zdroje mi byly neocenitelnou pomocí během implementace a doporučuji je každému, kdo se potýká s podobnými výzvami.
