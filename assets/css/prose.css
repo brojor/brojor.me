@@ -13,10 +13,14 @@
     margin-bottom: 1.2em;
 }
 
-.prose a:not(:where(h2 a, h3 a)) {
-    color: var(--fg-deeper);
+.prose a:not(:where(h2 a, h3 a, h4 a)) {
+    --uno: text-accent-sea-green/90;
     text-decoration: none;
     font-weight: 500;
+}
+
+.prose a:not(:where(h2 a, h3 a, h4 a)):hover {
+    --uno: text-accent-sea-green;
 }
 
 .prose strong {
@@ -62,20 +66,20 @@
 
 .prose ol>li {
     position: relative;
-    padding-left: 1.75em;
+    padding-left: 1.375em;
 }
 
 .prose ol>li::before {
     content: counter(list-item, var(--list-counter-style, decimal)) '.';
     position: absolute;
     font-weight: 400;
-    color: #6b7280;
+    color: var(--fg-deep);
     left: 0;
 }
 
 .prose ul>li {
     position: relative;
-    padding-left: 1.75em;
+    padding-left: 1.375em;
 }
 
 .prose ul>li::before {
@@ -167,6 +171,10 @@
     padding: 0.2em 0.4em;
     margin: -0.2em 0;
 }
+
+.prose code:not(pre code) {
+    white-space: nowrap;
+  }
 
 .prose a code {
     color: #111827;
@@ -298,8 +306,8 @@
 }
 
 .prose li {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-top: 0.375em;
+    margin-bottom: 0.375em;
 }
 
 .prose>ul>li p {
@@ -319,8 +327,8 @@
 .prose ul ol,
 .prose ol ul,
 .prose ol ol {
-    margin-top: 0.75em;
-    margin-bottom: 0.75em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .prose hr+* {
