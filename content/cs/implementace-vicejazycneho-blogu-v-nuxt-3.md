@@ -1,15 +1,15 @@
 ---
 title: "Implementace vícejazyčného blogu v Nuxt 3 s Content modulem"
-description: "Objevte postup vytvoření vícejazyčného blogu s Nuxt 3 a Content modulem. Naučte se organizovat obsah, propojit jazykové verze a optimalizovat URL pro dokonalé SEO ve Vue ekosystému."
-date: 2025-03-23
+description: "Objevte postup vytvoření vícejazyčného blogu s Nuxt 3 a Content modulem. Naučte se organizovat obsah, propojit jazykové verze a optimalizovat URL pro dokonalé SEO."
+date: "2025-03-23"
 tags:
   - nuxt3
   - i18n
   - vue
   - lokalizace
   - seo
-translationKey: "multilingual-blog-nuxt-content"
-readingTime: 12
+translationKey: "multilingual-blog"
+readingTime: 15
 ---
 
 ::blog-post-header{:title="title" :date="date" :reading-time="readingTime"}
@@ -481,8 +481,8 @@ Klíčem k propojení těchto článků je shodná hodnota `translationKey: nuxt
 
 V budoucnu se plánuji zaměřit především na vylepšení SEO aspektů vícejazyčného blogu:
 
-1. **Strukturovaná data pro články** - Implementace JSON-LD schématu pro články v obou jazycích zlepší interpretaci obsahu vyhledávači a umožní bohatší zobrazení ve výsledcích vyhledávání.
-2. **Optimalizace meta tagů** - Vytvoření dynamičtějších a kontextově přesnějších meta popisků a titulků včetně Open Graph a Twitter karet usnadní sdílení na sociálních sítích.
+1. **Strukturovaná data pro články** - Implementace [JSON-LD schématu](https://json-ld.org/) pro články v obou jazycích zlepší interpretaci obsahu vyhledávači a umožní bohatší zobrazení ve výsledcích vyhledávání.
+2. **Optimalizace meta tagů** - Vytvoření dynamičtějších a kontextově přesnějších meta popisků a titulků včetně [Open Graph](https://ogp.me/) a Twitter karet usnadní sdílení na sociálních sítích.
 3. **Alternativní hreflang tagy** - Vylepšení implementace hreflang tagů pro jasnější propojení jazykových variant článků pomůže vyhledávačům správně indexovat a zobrazovat relevantní jazykové verze uživatelům.
 4. **Dynamická sitemap** - Vytvoření vícejazyčné sitemapy, která bude automaticky zahrnovat všechny články v obou jazycích s korektními hreflang odkazy.
 5. **Optimalizace rychlosti načítání** - Zlepšení Core Web Vitals metrik s ohledem na různé jazykové verze a specifické požadavky pro různé lokality.

@@ -1,15 +1,15 @@
 ---
 title: "Vitest: Testujte rychlostí blesku"
-description: "Objevte, jak Vitest dramaticky zrychluje JavaScript testování, zjednodušuje konfiguraci a nabízí plnou podporu moderních funkcí. Změní váš testovací workflow."
+description: "Objevte Vitest, revoluční testovací nástroj, který zrychluje JavaScript testování až 4x oproti Jestu a nabízí nativní podporu ESM modulů."
 date: "2025-03-20"
 tags:
- - vitest
- - testovani
- - javascript
- - vite
- - jest
-translationKey: "vitest-testovaci-revoluce"
-readingTime: 6
+  - vitest
+  - testovani
+  - javascript
+  - vite
+  - jest
+translationKey: "vitest-testing"
+readingTime: 7
 ---
 
 ::blog-post-header{:title="title" :date="date" :reading-time="readingTime"}
@@ -31,7 +31,7 @@ A tady přichází na scénu Vitest a mění pravidla hry.
 
 Vitest není jen další testovací nástroj – je to **kompletní přehodnocení** toho, jak by testování v moderním JavaScript světě mělo vypadat.
 
-Vitest byl vytvořen [Anthonym Fu](https://antfu.me/) a jeho první verze byla vydána v prosinci 2021. Tento testovací framework staví na základech [Vite](https://vite.dev/) – ultrarychlého vývojového serveru a build nástroje, za kterým stojí Evan You (tvůrce [Vue.js](https://vuejs.org/)). A stejně jako "vite" ve francouzštině znamená "rychlý", i Vitest následuje toto motto.
+Vitest byl vytvořen [Anthonym Fu](https://antfu.me/) a jeho první verze byla vydána v prosinci 2021. Tento testovací framework staví na základech [Vite](https://vite.dev/) – ultrarychlého vývojového serveru a build nástroje, za kterým stojí [Evan You](https://evanyou.me/) (tvůrce [Vue.js](https://vuejs.org/)). A stejně jako "vite" ve francouzštině znamená "rychlý", i Vitest následuje toto motto.
 
 > "Vitest se snaží stát testovacím runnerem volby pro Vite projekty a solidní alternativou i pro projekty, které Vite nepoužívají." – z oficiální dokumentace Vitest
 >

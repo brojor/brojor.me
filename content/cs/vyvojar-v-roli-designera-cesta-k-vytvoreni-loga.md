@@ -8,8 +8,8 @@ tags:
  - figma
  - svg
  - nuxt
-translationKey: "developer-designer-logo-web"
-readingTime: 15
+translationKey: "developer-designer-logo"
+readingTime: 10
 ---
 
 ::blog-post-header{:title="title" :date="date" :reading-time="readingTime"}
@@ -170,7 +170,7 @@ Jako brand color jsem zvolil barvu, která v psychologii barev kombinuje stabili
 
 ### Fáze 7: Optimalizace SVG pro web
 
-Jakmile jsem měl finální SVG soubor, dalším klíčovým krokem byla jeho optimalizace. K tomuto účelu je možné použít tyto nástroje:
+Jakmile jsem měl finální [SVG soubor](https://developer.mozilla.org/en-US/docs/Web/SVG), dalším klíčovým krokem byla jeho optimalizace. K tomuto účelu je možné použít tyto nástroje:
 
 - **[SVGO](https://github.com/svg/svgo)** - Nástroj příkazové řádky pro optimalizaci SVG
 - **[SVGOMG](https://optimize.svgomg.net/)** - Webová aplikace postavená na SVGO s přehledným rozhraním
