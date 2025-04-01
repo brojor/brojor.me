@@ -1,11 +1,11 @@
 ---
 title: "Krok za krokem: Sémanticky korektní přepínač jazyků ve Vue 3"
 description: "Vytvořte sémanticky korektní a plně přístupný přepínač jazyků s elegantní animací ve Vue 3. Krok za krokem od návrhu po implementaci s důrazem na a11y."
+date: "2025-04-01"
 tags:
   - vue
   - pristupnost
-  - komponenty
-  - uzivatelse-rozhrani
+  - UI
   - typescript
   - i18n
 translationKey: "semantic-language-switcher"

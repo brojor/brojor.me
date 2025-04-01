@@ -1,6 +1,6 @@
 ---
 title: "Vitest: Testujte rychlostí blesku"
-description: "Objevte Vitest, revoluční testovací nástroj, který zrychluje JavaScript testování až 4x oproti Jestu a nabízí nativní podporu ESM modulů."
+description: "Seznamte se s Vitestem, revolučním testovacím nástrojem, který zrychluje JavaScript testování až 4x oproti Jestu a nabízí nativní podporu ESM modulů."
 date: "2025-03-20"
 tags:
   - vitest

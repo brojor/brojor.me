@@ -1,6 +1,6 @@
 ---
 title: "Vývojář v roli designéra: Má cesta k vytvoření loga pro osobní web"
-description: "Objevte proces tvorby minimalistického loga od konceptu po implementaci. Naučte se propojit programátorské myšlení s grafickým designem a vytvořte silnou vizuální identitu pro váš web."
+description: "Odhalte tajemství tvorby minimalistického loga od konceptu po implementaci. Naučte se propojit programátorské myšlení s grafickým designem a vytvořte silnou vizuální identitu pro váš web."
 date: "2025-03-29"
 tags:
  - logo

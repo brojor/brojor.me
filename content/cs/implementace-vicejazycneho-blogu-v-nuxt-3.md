@@ -1,6 +1,6 @@
 ---
 title: "Implementace vícejazyčného blogu v Nuxt 3 s Content modulem"
-description: "Objevte postup vytvoření vícejazyčného blogu s Nuxt 3 a Content modulem. Naučte se organizovat obsah, propojit jazykové verze a optimalizovat URL pro dokonalé SEO."
+description: "Ponořte se do tvorby vícejazyčného blogu s Nuxt 3 a Content modulem. Naučte se organizovat obsah, propojit jazykové verze a optimalizovat URL pro dokonalé SEO."
 date: "2025-03-23"
 tags:
   - nuxt3
@@ -407,7 +407,7 @@ Toto řešení zajišťuje plynulý přechod mezi jazykovými verzemi článků 
 
 Nyní se podívejme, jak přesně funguje přepínání mezi jazyky v naší aplikaci. Následující diagram ilustruje interakci mezi jednotlivými komponentami:
 
-![Diagram znázorňující interakci komponent](/diagram.png)
+![Diagram znázorňující interakci komponent](/multilingual-blog/diagram-cs.png)
 
 Zatímco běžné stránky vyžadují pouze změnu locale, u detailu článku je potřeba navíc vyhledat odpovídající přeloženou verzi a zajistit správné přesměrování.
 
