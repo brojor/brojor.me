@@ -4,7 +4,14 @@ export default defineNuxtConfig({
   content: { build: { markdown: { highlight: { theme: 'vitesse-dark', langs: ['vue'] } } } },
   css: ['~/assets/css/reset.css', '~/assets/css/markdown.css', '~/assets/css/prose.css'],
   devtools: { enabled: true },
-  modules: ['@nuxt/content', '@nuxt/eslint', '@nuxt/fonts', '@nuxtjs/i18n', '@unocss/nuxt'],
+  modules: [
+    '@nuxtjs/robots',
+    '@nuxt/content',
+    '@nuxt/eslint',
+    '@nuxt/fonts',
+    '@nuxtjs/i18n',
+    '@unocss/nuxt',
+  ],
   eslint: {
     config: {
       standalone: false,
