@@ -1,8 +1,13 @@
 <script setup lang="ts">
-import { NuxtLinkLocale } from '#components'
-
 const route = useRoute()
-const { locale, t } = useI18n()
+const { locale, t, locales, baseUrl } = useI18n()
+
+const { getTranslatedPostPath } = useTranslatedPostPath()
+const translatedPostPath = await getTranslatedPostPath()
+
+const alternateLanguage = computed(() => {
+  return locales.value.find(loc => loc.code !== locale.value)
+})
 
 const { data: post } = await useAsyncData(
   `post-${route.path}`,
@@ -10,6 +15,31 @@ const { data: post } = await useAsyncData(
     .where('path', '=', route.path)
     .first(),
 )
+
+useHead({
+  link: () => [
+    {
+      id: `i18n-alt-${alternateLanguage.value?.code}`,
+      rel: 'alternate',
+      href: `${baseUrl.value}${translatedPostPath}`,
+      hreflang: alternateLanguage.value?.code,
+    },
+    {
+      id: `i18n-alt-${alternateLanguage.value?.language}`,
+      rel: 'alternate',
+      href: `${baseUrl.value}${translatedPostPath}`,
+      hreflang: alternateLanguage.value?.language,
+    },
+    ...(locale.value === 'en'
+      ? [{
+          id: 'i18n-xd',
+          rel: 'alternate',
+          href: `${baseUrl.value}/${translatedPostPath}`,
+          hreflang: 'x-default',
+        }]
+      : []),
+  ],
+})
 </script>
 
 <template>
