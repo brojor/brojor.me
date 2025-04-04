@@ -1,22 +1,18 @@
 <script setup>
-// const route = useRoute()
-// const { t } = useI18n()
 const head = useLocaleHead()
-// const title = computed(() => t(route.meta.title, 'Brojor'))
 </script>
 
 <template>
   <div>
     <Html :lang="head.htmlAttrs.lang" :dir="head.htmlAttrs.dir" class="dark">
-      <!-- <Head>
-        <Title>{{ title }}</Title>
+      <Head>
         <template v-for="link in head.link" :key="link.hid">
           <Link :id="link.hid" :rel="link.rel" :href="link.href" :hreflang="link.hreflang" />
         </template>
         <template v-for="meta in head.meta" :key="meta.hid">
           <Meta :id="meta.hid" :property="meta.property" :content="meta.content" />
         </template>
-      </Head> -->
+      </Head>
       <Body class="bg-zinc-950 font-sans">
         <header class="flex justify-between items-center px-8 py-4 border-b border-bg-deeper">
           <img src="/logo.svg" alt="logo" class="w-24">
