@@ -55,7 +55,7 @@ export default defineNuxtConfig({
         name: 'English',
       },
     ],
-    baseUrl: 'https://brojor.me',
+    baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
     vueI18n: './i18n.config.ts',
   },
 })
