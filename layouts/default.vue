@@ -1,5 +1,8 @@
 <script setup>
 const head = useLocaleHead()
+useSeoMeta({
+  ogTitle: '%s',
+})
 </script>
 
 <template>

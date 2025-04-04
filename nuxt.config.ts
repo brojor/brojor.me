@@ -1,5 +1,20 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import process from 'node:process'
+
 export default defineNuxtConfig({
+  app: {
+    head: {
+      titleTemplate: '%s %separator %siteName',
+      templateParams: {
+        siteName: process.env.NUXT_PUBLIC_SITE_NAME,
+      },
+    },
+  },
+  runtimeConfig: {
+    public: {
+      siteName: process.env.NUXT_PUBLIC_SITE_NAME,
+    },
+  },
   compatibilityDate: '2024-11-01',
   content: { build: { markdown: { highlight: { theme: 'vitesse-dark', langs: ['vue'] } } } },
   css: ['~/assets/css/reset.css', '~/assets/css/markdown.css', '~/assets/css/prose.css'],

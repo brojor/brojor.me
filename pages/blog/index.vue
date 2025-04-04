@@ -1,5 +1,24 @@
 <script setup lang="ts">
-const { locale } = useI18n()
+const { locale, t, baseUrl } = useI18n()
+
+useSeoMeta({
+  title: 'Blog',
+  description: t('blog.description'),
+  ogDescription: t('blog.description'),
+  ogType: 'website',
+  ogImage: `${baseUrl.value}/blog/og-image-${locale.value}.png`,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageAlt: t('blog.ogImageAlt'),
+  ogSiteName: `${useRuntimeConfig().public.siteName}`,
+  twitterCard: 'summary_large_image',
+  twitterSite: '@brojor_dev',
+  twitterCreator: '@brojor_dev',
+  twitterTitle: t('blog.title'),
+  twitterDescription: t('blog.description'),
+  twitterImage: `${baseUrl.value}/blog/x-image-${locale.value}.png`,
+  twitterImageAlt: t('blog.ogImageAlt'),
+})
 
 const { data: posts } = await useAsyncData(
   `blog-posts-${locale.value}`,
@@ -11,10 +30,10 @@ const { data: posts } = await useAsyncData(
   <main role="main" class="text-fg max-w-[65ch] mx-auto font-normal px-2 md:px-0">
     <section class="blog-header my-6 md:my-8">
       <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-fg-deeper mb-4">
-        Blog
+        {{ $t('blog.title') }}
       </h1>
       <p class="text-fg-deep max-w-2xl leading-relaxed">
-        S vášní pro Vue.js ekosystém a webové technologie sdílím praktické postřehy a elegantní řešení složitých vývojářských problémů.
+        {{ $t('blog.description') }}
       </p>
     </section>
     <section>
