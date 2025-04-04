@@ -407,7 +407,7 @@ This solution ensures a smooth transition between language versions of articles 
 
 Now let's look at exactly how language switching works in our application. The following diagram illustrates the interaction between individual components:
 
-![Diagram showing component interaction](/multilingual-blog/diagram-en.png)
+![Diagram showing component interaction](/images/articles/multilingual-blog/diagram-en.png)
 
 While regular pages only require a locale change, article details additionally need to find the corresponding translated version and ensure proper redirection.
 

@@ -407,7 +407,7 @@ Toto řešení zajišťuje plynulý přechod mezi jazykovými verzemi článků 
 
 Nyní se podívejme, jak přesně funguje přepínání mezi jazyky v naší aplikaci. Následující diagram ilustruje interakci mezi jednotlivými komponentami:
 
-![Diagram znázorňující interakci komponent](/multilingual-blog/diagram-cs.png)
+![Diagram znázorňující interakci komponent](/images/articles/multilingual-blog/diagram-cs.png)
 
 Zatímco běžné stránky vyžadují pouze změnu locale, u detailu článku je potřeba navíc vyhledat odpovídající přeloženou verzi a zajistit správné přesměrování.
 

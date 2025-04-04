@@ -6,13 +6,13 @@ useSeoMeta({
   description: t('blog.description'),
   ogDescription: t('blog.description'),
   ogType: 'website',
-  ogImage: `${baseUrl.value}/blog/og-image-${locale.value}.png`,
+  ogImage: `${baseUrl.value}/images/social/blog/og-image-${locale.value}.png`,
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogImageAlt: t('blog.ogImageAlt'),
   twitterTitle: t('blog.title'),
   twitterDescription: t('blog.description'),
-  twitterImage: `${baseUrl.value}/blog/x-image-${locale.value}.png`,
+  twitterImage: `${baseUrl.value}/images/social/blog/x-image-${locale.value}.png`,
   twitterImageAlt: t('blog.ogImageAlt'),
 })
 

@@ -361,7 +361,7 @@ Původní komplexní šablona s vlastními styly byla nahrazena jedním řádkem
 
 Výsledný přepínač má podobu elegantního slideru, kde aktivní volba je zvýrazněna posuvným indikátorem. Přepínač reaguje na kliknutí i na ovládání klávesnicí a poskytuje vizuální zpětnou vazbu pro focus stavy.
 
-![Animace přepínače jazyků](/toggle-switch/toggle-switch.gif){width=200 data-no-margin}
+![Animace přepínače jazyků](/images/articles/semantic-language-switcher/toggle-switch.gif){width=200 data-no-margin}
 
 ## Závěr a tipy
 
