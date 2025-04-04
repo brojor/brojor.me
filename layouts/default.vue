@@ -2,6 +2,9 @@
 const head = useLocaleHead()
 useSeoMeta({
   ogTitle: '%s',
+  ogSiteName: `${useRuntimeConfig().public.siteName}`,
+  twitterCard: 'summary_large_image',
+  twitterSite: '@brojor_dev',
 })
 </script>
 

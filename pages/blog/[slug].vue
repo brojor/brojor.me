@@ -16,6 +16,27 @@ const { data: post } = await useAsyncData(
     .first(),
 )
 
+useSeoMeta({
+  title: post.value?.title,
+  description: post.value?.description,
+  ogTitle: post.value?.title,
+  ogDescription: post.value?.description,
+  ogType: 'article',
+  ogImage: `${baseUrl.value}/images/social/${post.value?.translationKey}/og-image-${locale.value}.png`,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageAlt: `${post.value?.title}`,
+  twitterCreator: '@brojor_dev',
+  twitterTitle: post.value?.title,
+  twitterDescription: post.value?.description,
+  twitterImage: `${baseUrl.value}/images/social/${post.value?.translationKey}/x-image-${locale.value}.png`,
+  twitterImageAlt: `${post.value?.title}`,
+  twitterLabel1: locale.value === 'cs' ? 'Autor' : 'Author',
+  twitterData1: 'BroJor',
+  twitterLabel2: locale.value === 'cs' ? 'Doba čtení' : 'Reading time',
+  twitterData2: `${post.value?.readingTime} min`,
+})
+
 useHead({
   link: () => [
     {
