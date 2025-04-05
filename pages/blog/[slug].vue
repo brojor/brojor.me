@@ -35,6 +35,11 @@ useSeoMeta({
   twitterData1: 'BroJor',
   twitterLabel2: locale.value === 'cs' ? 'Doba čtení' : 'Reading time',
   twitterData2: `${post.value?.readingTime} min`,
+  articleAuthor: ['Bronislav Jordán'],
+  articlePublishedTime: post.value?.publishedDate,
+  articleModifiedTime: post.value?.modifiedDate,
+  articleTag: post.value?.tags,
+  articleSection: `${locale.value === 'cs' ? 'Webový vývoj' : 'Web development'}`,
 })
 
 useHead({
