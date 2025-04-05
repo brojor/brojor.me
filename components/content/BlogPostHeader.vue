@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineProps<{
   title: string
-  date: string
+  publishedDate: string
   readingTime: number
 }>()
 </script>
@@ -11,6 +11,6 @@ defineProps<{
     <h1>
       {{ title }}
     </h1>
-    <BlogMeta :date="date" :reading-time="readingTime" class="-mt-4" />
+    <BlogMeta :published-date="publishedDate" :reading-time="readingTime" class="-mt-4" />
   </header>
 </template>

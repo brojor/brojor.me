@@ -1,7 +1,8 @@
 ---
 title: "Vitest: Test at Lightning Speed"
 description: "Meet Vitest, a revolutionary testing tool that speeds up JavaScript testing up to 4x compared to Jest and offers native support for ESM modules."
-date: "2025-03-20"
+publishedDate: "2025-03-20"
+modifiedDate: "2025-03-20"
 tags:
   - vitest
   - testing
@@ -12,7 +13,7 @@ translationKey: "vitest-testing"
 readingTime: 7
 ---
 
-::blog-post-header{:title="title" :date="date" :reading-time="readingTime"}
+::blog-post-header{:title="title" :published-date="publishedDate" :reading-time="readingTime"}
 ::
 
 When was the last time you waited for your JavaScript project tests to complete and wondered if it could be faster? If you're like most developers, probably quite often. Fortunately, there's a solution that can completely transform your testing workflow. It's called [**Vitest**](https://vitest.dev/), and today we'll take a closer look at it.

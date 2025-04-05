@@ -1,7 +1,8 @@
 ---
 title: "Implementation of a Multilingual Blog in Nuxt 3 with Content Module"
 description: "Dive into creating a multilingual blog with Nuxt 3 and the Content module. Learn how to organize content, connect language versions, and optimize URLs for perfect SEO."
-date: "2025-03-23"
+publishedDate: "2025-03-23"
+modifiedDate: "2025-03-23"
 tags:
   - nuxt3
   - i18n
@@ -12,7 +13,7 @@ translationKey: "multilingual-blog"
 readingTime: 15
 ---
 
-::blog-post-header{:title="title" :date="date" :reading-time="readingTime"}
+::blog-post-header{:title="title" :published-date="publishedDate" :reading-time="readingTime"}
 ::
 
 When I started writing a blog about the technologies I use, I encountered a problem: how to offer content in both Czech and English without complicating article management or degrading SEO?

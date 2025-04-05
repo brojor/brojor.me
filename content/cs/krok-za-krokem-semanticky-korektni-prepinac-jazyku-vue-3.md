@@ -1,7 +1,8 @@
 ---
 title: "Krok za krokem: Sémanticky korektní přepínač jazyků ve Vue 3"
 description: "Vytvořte sémanticky korektní a plně přístupný přepínač jazyků s elegantní animací ve Vue 3. Krok za krokem od návrhu po implementaci s důrazem na a11y."
-date: "2025-04-01"
+publishedDate: "2025-04-01"
+modifiedDate: "2025-04-01"
 tags:
   - vue
   - pristupnost
@@ -12,7 +13,7 @@ translationKey: "semantic-language-switcher"
 readingTime: 10
 ---
 
-::blog-post-header{:title="title" :date="date" :reading-time="readingTime"}
+::blog-post-header{:title="title" :published-date="publishedDate" :reading-time="readingTime"}
 ::
 
 Na vícejazyčném webu je přepínač jazyků klíčovým prvkem uživatelského rozhraní. Tato nenápadná, ale důležitá komponenta musí být intuitivní, vizuálně srozumitelná a především [přístupná](https://developer.mozilla.org/en-US/docs/Web/Accessibility) pro všechny uživatele, včetně těch, kteří používají čtečky obrazovek nebo ovládají web pouze klávesnicí.

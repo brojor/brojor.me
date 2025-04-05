@@ -1,7 +1,8 @@
 ---
 title: "Step by Step: Semantically Correct Language Switcher in Vue 3"
 description: "Create a semantically correct and fully accessible language switcher with elegant animation in Vue 3. Step by step from design to implementation with emphasis on a11y."
-date: "2025-04-01"
+publishedDate: "2025-04-01"
+modifiedDate: "2025-04-01"
 tags:
   - vue
   - accessibility
@@ -12,7 +13,7 @@ translationKey: "semantic-language-switcher"
 readingTime: 10
 ---
 
-::blog-post-header{:title="title" :date="date" :reading-time="readingTime"}
+::blog-post-header{:title="title" :published-date="publishedDate" :reading-time="readingTime"}
 ::
 
 On a multilingual website, the language switcher is a key element of the user interface. This unobtrusive yet important component must be intuitive, visually clear, and above all [accessible](https://developer.mozilla.org/en-US/docs/Web/Accessibility) to all users, including those who use screen readers or navigate the web using only a keyboard.

@@ -3,7 +3,8 @@ import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 const blogSchema = z.object({
   title: z.string(),
   description: z.string(),
-  date: z.string(),
+  publishedDate: z.string(),
+  modifiedDate: z.string().optional(),
   tags: z.array(z.string()),
   readingTime: z.number(),
   translationKey: z.string(),

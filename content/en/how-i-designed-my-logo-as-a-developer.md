@@ -1,7 +1,8 @@
 ---
 title: "Developer in the Role of Designer: My Journey to Creating a Logo for My Personal Website"
 description: "Discover the secrets of creating a minimalist logo from concept to implementation. Learn how to connect programming thinking with graphic design and create a strong visual identity for your website."
-date: "2025-03-29"
+publishedDate: "2025-03-29"
+modifiedDate: "2025-03-29"
 tags:
  - logo
  - design
@@ -12,7 +13,7 @@ translationKey: "developer-designer-logo"
 readingTime: 10
 ---
 
-::blog-post-header{:title="title" :date="date" :reading-time="readingTime"}
+::blog-post-header{:title="title" :published-date="publishedDate" :reading-time="readingTime"}
 ::
 
 When I decided to create my personal website, I knew I needed a strong visual identity. A logo is the first thing visitors will see – it's a visual shortcut to who I am and what I do. In this article, I'll guide you through the entire process of creating my logo from the initial idea to the final form, and I'll introduce you to the tools that helped me most during this creative journey.

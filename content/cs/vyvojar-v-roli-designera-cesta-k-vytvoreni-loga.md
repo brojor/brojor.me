@@ -1,7 +1,8 @@
 ---
 title: "Vývojář v roli designéra: Má cesta k vytvoření loga pro osobní web"
 description: "Odhalte tajemství tvorby minimalistického loga od konceptu po implementaci. Naučte se propojit programátorské myšlení s grafickým designem a vytvořte silnou vizuální identitu pro váš web."
-date: "2025-03-29"
+publishedDate: "2025-03-29"
+modifiedDate: "2025-03-29"
 tags:
  - logo
  - design
@@ -12,7 +13,7 @@ translationKey: "developer-designer-logo"
 readingTime: 10
 ---
 
-::blog-post-header{:title="title" :date="date" :reading-time="readingTime"}
+::blog-post-header{:title="title" :published-date="publishedDate" :reading-time="readingTime"}
 ::
 
 Když jsem se rozhodl vytvořit svůj osobní web, věděl jsem, že potřebuji silnou vizuální identitu. Logo je první věc, kterou návštěvníci uvidí – je to vizuální zkratka toho, kdo jsem a co dělám. V tomto článku vás provedu celým procesem tvorby mého loga od prvotního nápadu až po konečnou podobu a představím vám nástroje, které mi při této tvůrčí cestě nejvíce pomohly.

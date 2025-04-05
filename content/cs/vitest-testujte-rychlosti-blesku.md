@@ -1,7 +1,8 @@
 ---
 title: "Vitest: Testujte rychlostí blesku"
 description: "Seznamte se s Vitestem, revolučním testovacím nástrojem, který zrychluje JavaScript testování až 4x oproti Jestu a nabízí nativní podporu ESM modulů."
-date: "2025-03-20"
+publishedDate: "2025-03-20"
+modifiedDate: "2025-03-20"
 tags:
   - vitest
   - testovani
@@ -12,7 +13,7 @@ translationKey: "vitest-testing"
 readingTime: 7
 ---
 
-::blog-post-header{:title="title" :date="date" :reading-time="readingTime"}
+::blog-post-header{:title="title" :published-date="publishedDate" :reading-time="readingTime"}
 ::
 
 Kdy jste naposledy čekali na dokončení testů vašeho JavaScript projektu a přemýšleli, jestli by to nešlo rychleji? Pokud jste jako většina vývojářů, pravděpodobně často. Naštěstí existuje řešení, které může váš testovací workflow zcela změnit. Jmenuje se [**Vitest**](https://vitest.dev/) a dnes se na něj podíváme zblízka.

@@ -18,7 +18,7 @@ useSeoMeta({
 
 const { data: posts } = await useAsyncData(
   `blog-posts-${locale.value}`,
-  () => queryCollection(locale.value).order('date', 'DESC').all(),
+  () => queryCollection(locale.value).order('publishedDate', 'DESC').all(),
 )
 </script>
 
@@ -41,7 +41,7 @@ const { data: posts } = await useAsyncData(
                 <h2 class="text-lg sm:text-xl leading-snug text-fg-deeper font-bold line-clamp-2">
                   {{ post.title }}
                 </h2>
-                <BlogMeta :date="post.date" :reading-time="post.readingTime" class="mt-2" />
+                <BlogMeta :published-date="post.publishedDate" :reading-time="post.readingTime" class="mt-2" />
               </header>
               <div class="leading-relaxed text-fg-deep line-clamp-3">
                 <p>{{ post.description }}</p>
