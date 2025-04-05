@@ -2,8 +2,8 @@
 const route = useRoute()
 const { locale, t } = useI18n()
 
-const { getTranslatedPostPath } = useTranslatedPostPath()
-const translatedPostPath = await getTranslatedPostPath()
+const { getTranslatedPost } = useTranslatedPost()
+const translatedPost = await getTranslatedPost()
 
 const { data: post } = await useAsyncData(
   `post-${route.path}`,
@@ -21,7 +21,7 @@ useSeoMeta({
 })
 
 useHead({
-  link: useBlogDetailHeadLinks(translatedPostPath),
+  link: useBlogDetailHeadLinks(translatedPost),
 })
 </script>
 

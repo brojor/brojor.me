@@ -1,4 +1,4 @@
-export function useTranslatedPostPath() {
+export function useTranslatedPost() {
   const { locale } = useI18n()
   const route = useRoute()
 
@@ -17,17 +17,17 @@ export function useTranslatedPostPath() {
     { immediate: false },
   )
 
-  async function getTranslatedPostPath() {
+  async function getTranslatedPost() {
     await fetchOriginalPost()
     if (!translationKey.value) {
-      return null
+      return ref(null)
     }
     await fetchTranslatedPost()
 
-    return translatedPost.value?.path
+    return translatedPost
   }
 
   return {
-    getTranslatedPostPath,
+    getTranslatedPost,
   }
 }
