@@ -2,11 +2,8 @@
 const route = useRoute()
 const { locale, t } = useI18n()
 
-const { getTranslatedPost } = useTranslatedPost()
-const translatedPost = await getTranslatedPost()
-
 const { data: post } = await useAsyncData(
-  `post-${route.path}`,
+  `post-${route.params.slug}`,
   () => queryCollection(locale.value)
     .where('path', '=', route.path)
     .first(),
@@ -21,7 +18,7 @@ useSeoMeta({
 })
 
 useHead({
-  link: useBlogDetailHeadLinks(translatedPost),
+  link: useBlogDetailHeadLinks(),
 })
 </script>
 

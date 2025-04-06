@@ -1,13 +1,12 @@
 <script setup lang="ts">
 const { locale, locales, setLocale, setLocaleCookie } = useI18n()
 const route = useRoute()
-const { getTranslatedPost } = useTranslatedPost()
+const { translatedPost } = useTranslatedPost()
 
 async function switchLocale(code: 'en' | 'cs') {
   if (route.name?.toString().includes('blog-slug')) {
     setLocaleCookie(code)
 
-    const translatedPost = await getTranslatedPost()
     if (translatedPost.value) {
       navigateTo(translatedPost.value.path)
     }
