@@ -2,118 +2,85 @@ import type { SitemapUrlInput } from '#sitemap/types'
 import { defineSitemapEventHandler } from '#imports'
 import matter from 'gray-matter'
 
-type LangCode = 'cs' | 'en'
+const BLOG_PATH = {
+  cs: '/blog',
+  en: '/en/blog',
+} as const
 
-/**
- * Získá detaily jazyka (hreflang a sitemap identifikátor)
- * @param {string} lang - Kód jazyka (cs, en)
- * @returns {object} - Objekt s hreflang a sitemap hodnotami
- */
-function getLangDetails(lang: LangCode) {
-  switch (lang) {
-    case 'cs':
-      return { hreflang: 'cs-CZ', sitemap: 'cs-CZ' }
-    case 'en':
-      return { hreflang: 'en-US', sitemap: 'en-US' }
-    default:
-      throw new Error(`Nepodporovaný jazyk: ${lang}`)
-  }
+const LANG_CONFIG = {
+  cs: { hreflang: 'cs-CZ', sitemap: 'cs-CZ' },
+  en: { hreflang: 'en-US', sitemap: 'en-US' },
+} as const
+
+function getBlogPath(lang: LangCode, slug: string): string {
+  const cleanSlug = slug.replace(/\.md$/, '')
+  return `${BLOG_PATH[lang]}/${cleanSlug}`
 }
 
-/**
- * Vytvoří URL cestu pro daný jazyk a slug
- * @param {string} lang - Kód jazyka (cs, en)
- * @param {string} slug - Slug článku bez přípony .md
- * @returns {string} - URL cesta
- */
-function getUrlPath(lang: LangCode, slug: string) {
-  // Odstranění přípony .md
-  const cleanSlug = slug.replace(/\.md$/, '')
+function getLangConfig(lang: LangCode) {
+  const config = LANG_CONFIG[lang]
+  if (!config)
+    throw new Error(`Nepodporovaný jazyk: ${lang}`)
+  return config
+}
 
-  // Pro angličtinu použijeme /en/blog/ strukturu
-  if (lang === 'en') {
-    return `/en/blog/${cleanSlug}`
+function parseFilePath(filePath: string): [LangCode, string] {
+  const [lang, slug] = filePath.split(':')
+  if (!lang || !slug)
+    throw new Error(`Neplatný formát cesty: ${filePath}`)
+  return [lang as LangCode, slug]
+}
+
+function createTranslation(lang: LangCode, slug: string): BlogPostTranslation {
+  return {
+    hreflang: getLangConfig(lang).hreflang,
+    href: getBlogPath(lang, slug),
   }
-
-  // Pro češtinu pouze /blog/
-  return `/blog/${cleanSlug}`
 }
 
 export default defineSitemapEventHandler(async (e) => {
   const storage = e.context.contentStorage
   const filePaths = await storage.getKeys()
 
-  // Vytvoříme mapu translationKey => { cs: path, en: path }
-  const translationMap = new Map()
-  const fileMetadataMap = new Map()
+  // Process all files in parallel
+  const fileMetadata: BlogPostMetadata[] = await Promise.all(
+    filePaths.map(async (filePath: string) => {
+      const [lang, slug] = parseFilePath(filePath)
+      const fileContent = await storage.getItem(filePath)
+      const { data } = matter(fileContent)
+      return { lang, slug, translationKey: data.translationKey as string }
+    }),
+  )
 
-  // Nejprve zpracujeme všechny soubory a extrahujeme metadata
-  for (const filePath of filePaths) {
-    // Rozdělení cesty na jazyk a slug
-    const [lang, slug] = filePath.split(':')
+  // Group by translation key
+  const translationsByKey = fileMetadata.reduce((acc, { translationKey, lang, slug }) => {
+    if (!acc[translationKey])
+      acc[translationKey] = {} as Record<LangCode, string>
+    acc[translationKey][lang] = slug
+    return acc
+  }, {} as BlogPostTranslations)
 
-    // Získání obsahu souboru
-    const fileContent = await storage.getItem(filePath)
+  // Create sitemap entries
+  return fileMetadata.map(({ lang, slug, translationKey }) => {
+    const translations = translationsByKey[translationKey]
+    const langConfig = getLangConfig(lang)
 
-    // Parsování frontmatteru
-    const { data } = matter(fileContent)
-    const translationKey = data.translationKey
+    const alternatives = Object.entries(translations)
+      .filter(([transLang]) => transLang !== lang)
+      .map(([transLang, targetSlug]) => createTranslation(transLang as LangCode, targetSlug))
 
-    // Uložení do mapy translací
-    if (!translationMap.has(translationKey)) {
-      translationMap.set(translationKey, {})
-    }
-    translationMap.get(translationKey)[lang] = slug
-
-    // Uložení metadat do mapy
-    fileMetadataMap.set(filePath, {
-      lang,
-      slug,
-      translationKey,
-    })
-  }
-
-  // Vytvoření výsledných sitemap objektů
-  const sitemapEntries = []
-
-  for (const filePath of filePaths) {
-    const metadata = fileMetadataMap.get(filePath)
-    const { lang, slug, translationKey } = metadata
-
-    // Nastavení jazykových kódů a cest pro sitemap
-    const langDetails = getLangDetails(lang)
-    const alternativesData = []
-
-    // Procházení všech dostupných překladů pro daný translationKey
-    const translations = translationMap.get(translationKey)
-    for (const [transLang, transSlug] of Object.entries(translations) as [LangCode, string][]) {
-      // Přeskočíme aktuální jazyk (ten bude v loc)
-      if (transLang === lang)
-        continue
-
-      const transLangDetails = getLangDetails(transLang)
-
-      alternativesData.push({
-        hreflang: transLangDetails.hreflang,
-        href: getUrlPath(transLang, transSlug),
-      })
-    }
-
-    // Pro anglické články přidáme x-default alternativu ukazující na českou verzi
+    // Add x-default for English posts
     if (lang === 'en' && translations.cs) {
-      alternativesData.push({
+      alternatives.push({
         hreflang: 'x-default',
-        href: getUrlPath('cs', translations.cs),
+        href: getBlogPath('cs', translations.cs),
       })
     }
 
-    // Vytvoření sitemap objektu
-    sitemapEntries.push({
-      loc: getUrlPath(lang, slug),
-      alternatives: alternativesData,
-      _sitemap: langDetails.sitemap,
-    })
-  }
-
-  return sitemapEntries satisfies SitemapUrlInput[]
+    return {
+      loc: getBlogPath(lang, slug),
+      alternatives,
+      _sitemap: langConfig.sitemap,
+    }
+  }) satisfies SitemapUrlInput[]
 })

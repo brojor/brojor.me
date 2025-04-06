@@ -13,6 +13,11 @@ export default defineNuxtConfig({
   sitemap: {
     sources: ['/api/__sitemap__/urls'],
   },
+  nitro: {
+    imports: {
+      dirs: ['types'],
+    },
+  },
   runtimeConfig: {
     public: {
       siteName: process.env.NUXT_PUBLIC_SITE_NAME,
