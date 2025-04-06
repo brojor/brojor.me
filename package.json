@@ -18,8 +18,11 @@
     "@nuxt/eslint": "1.2.0",
     "@nuxt/fonts": "0.11.0",
     "@nuxtjs/robots": "5.2.8",
+    "@nuxtjs/sitemap": "7.2.9",
     "eslint": "^9.0.0",
+    "gray-matter": "^4.0.3",
     "nuxt": "^3.16.2",
+    "unstorage": "^1.15.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
