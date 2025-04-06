@@ -362,7 +362,7 @@ The original complex template with custom styles was replaced by a single line t
 
 The resulting switcher takes the form of an elegant slider, where the active option is highlighted by a sliding indicator. The switcher responds to clicks and keyboard control and provides visual feedback for focus states.
 
-![Language switcher animation](/toggle-switch/toggle-switch.gif){width=200 data-no-margin}
+![Language switcher animation](/images/articles/semantic-language-switcher/toggle-switch.gif){width=200 data-no-margin}
 
 ## Conclusion and Tips
 
