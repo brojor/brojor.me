@@ -1,4 +1,5 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
+import { asSitemapCollection } from '@nuxtjs/sitemap/content'
 
 const blogSchema = z.object({
   title: z.string(),
@@ -12,22 +13,22 @@ const blogSchema = z.object({
 
 export default defineContentConfig({
   collections: {
-    cs: defineCollection({
+    cs: defineCollection(asSitemapCollection({
       source: {
         include: 'cs/*.md',
         prefix: '/blog',
       },
       type: 'page',
       schema: blogSchema,
-    }),
+    })),
 
-    en: defineCollection({
+    en: defineCollection(asSitemapCollection({
       source: {
         include: 'en/*.md',
         prefix: '/en/blog',
       },
       type: 'page',
       schema: blogSchema,
-    }),
+    })),
   },
 })

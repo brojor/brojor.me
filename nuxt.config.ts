@@ -20,6 +20,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/reset.css', '~/assets/css/markdown.css', '~/assets/css/prose.css'],
   devtools: { enabled: true },
   modules: [
+    '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@nuxt/content',
     '@nuxt/eslint',
@@ -31,6 +32,11 @@ export default defineNuxtConfig({
     config: {
       standalone: false,
     },
+  },
+  sitemap: {
+    sources: [
+      '/api/__sitemap__/urls',
+    ],
   },
   i18n: {
     strategy: 'prefix_except_default',
