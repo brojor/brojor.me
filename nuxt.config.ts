@@ -20,6 +20,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/reset.css', '~/assets/css/markdown.css', '~/assets/css/prose.css'],
   devtools: { enabled: true },
   modules: [
+    '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@nuxt/content',
     '@nuxt/eslint',
