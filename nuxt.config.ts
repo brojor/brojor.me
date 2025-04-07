@@ -33,6 +33,11 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
+  sitemap: {
+    sources: [
+      '/api/__sitemap__/urls',
+    ],
+  },
   i18n: {
     strategy: 'prefix_except_default',
     defaultLocale: 'cs',
