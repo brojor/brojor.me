@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { locale, t } = useI18n()
+const { locale, t, localeProperties, baseUrl } = useI18n()
 
 useSeoMeta({
   title: 'Blog',
@@ -12,6 +12,45 @@ const { data: posts } = await useAsyncData(
   `blog-posts-${locale.value}`,
   () => queryCollection(locale.value).order('publishedDate', 'DESC').all(),
 )
+
+const itemListElement = posts.value?.map((post, index) => {
+  return {
+    '@type': 'ListItem',
+    'position': index + 1,
+    'url': `${baseUrl.value}${post.path}`,
+  }
+})
+useSchemaOrg([
+  definePerson({
+    name: 'BroJor',
+    image: '/profile-photo.webp',
+    description: 'Passionate web developer focusing on Vue.js ecosystem.',
+    url: process.env.NUXT_PUBLIC_BASE_URL,
+    sameAs: [
+      'https://github.com/brojor',
+      'https://www.linkedin.com/in/brojor',
+      'https://x.com/brojor_dev',
+    ],
+  }),
+  defineWebSite({
+    name: `${useRuntimeConfig().public.siteName}`,
+  }),
+  defineWebPage({
+    '@type': ['Blog', 'WebPage'],
+    'inLanguage': localeProperties.value.language,
+    'publisher': {
+      '@id': `${baseUrl.value}/#identity`,
+    },
+    'isPartOf': {
+      '@id': `${baseUrl.value}/blog#webpage`,
+    },
+  }),
+  defineItemList({
+    '@id': `${baseUrl.value}/blog#itemlist`,
+    'name': t('blog.itemList'),
+    itemListElement,
+  }),
+])
 </script>
 
 <template>

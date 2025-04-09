@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxtjs/i18n',
     '@unocss/nuxt',
+    'nuxt-schema-org',
   ],
   eslint: {
     config: {
@@ -37,6 +38,9 @@ export default defineNuxtConfig({
     sources: [
       '/api/__sitemap__/urls',
     ],
+  },
+  schemaOrg: {
+    defaults: false,
   },
   i18n: {
     strategy: 'prefix_except_default',
