@@ -14,21 +14,6 @@ export function useBlogListingSchema(
   )
 
   const schema = computed(() => [
-    definePerson({
-      name: 'BroJor',
-      image: '/profile-photo.webp',
-      description:
-        'Passionate web developer focusing on Vue.js ecosystem.',
-      url: baseUrl.value,
-      sameAs: [
-        'https://github.com/brojor',
-        'https://www.linkedin.com/in/brojor',
-        'https://x.com/brojor_dev',
-      ],
-    }),
-    defineWebSite({
-      name: `${useRuntimeConfig().public.siteName}`,
-    }),
     defineWebPage({
       '@type': ['Blog', 'WebPage'],
       'inLanguage': localeProperties.value.language,

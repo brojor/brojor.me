@@ -9,6 +9,8 @@ const { data: post } = await useAsyncData(
     .first(),
 )
 
+const { schema } = useBlogDetailSchema(post)
+
 useSeoMeta({
   title: post.value?.title,
   description: post.value?.description,
@@ -20,6 +22,8 @@ useSeoMeta({
 useHead({
   link: useBlogDetailHeadLinks(),
 })
+
+useSchemaOrg(schema)
 </script>
 
 <template>
