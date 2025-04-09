@@ -12,6 +12,10 @@ const { data: posts } = await useAsyncData(
   `blog-posts-${locale.value}`,
   () => queryCollection(locale.value).order('publishedDate', 'DESC').all(),
 )
+
+const { schema } = useBlogListingSchema(posts)
+
+useSchemaOrg(schema.value)
 </script>
 
 <template>
