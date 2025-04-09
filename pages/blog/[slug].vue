@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const route = useRoute()
-const { locale, t } = useI18n()
+const { locale, t, localeProperties, baseUrl, defaultLocale } = useI18n()
 
 const { data: post } = await useAsyncData(
   `post-${route.params.slug}`,
@@ -8,6 +8,8 @@ const { data: post } = await useAsyncData(
     .where('path', '=', route.path)
     .first(),
 )
+
+const { translatedPost } = useTranslatedPost()
 
 useSeoMeta({
   title: post.value?.title,
@@ -20,6 +22,41 @@ useSeoMeta({
 useHead({
   link: useBlogDetailHeadLinks(),
 })
+
+interface TranslationRelation {
+  workTranslation?: { '@id': string }
+  translationOfWork?: { '@id': string }
+}
+
+const translationRelation = computed<TranslationRelation>(() => {
+  if (!translatedPost.value)
+    return {}
+
+  const id = `${baseUrl.value}${translatedPost.value.path}`
+
+  return locale.value === defaultLocale
+    ? { workTranslation: { '@id': id } }
+    : { translationOfWork: { '@id': id } }
+})
+
+useSchemaOrg([
+  defineWebPage({
+    inLanguage: localeProperties.value.language,
+  }),
+  defineArticle({
+    '@type': 'TechArticle',
+    'url': `${baseUrl.value}${route.path}`,
+    'headline': post.value?.title,
+    'description': post.value?.description,
+    'datePublished': post.value?.publishedDate,
+    'dateModified': post.value?.modifiedDate,
+    'timeRequired': `PT${post.value?.readingTime}M`,
+    'image': `${baseUrl.value}/images/social/${post.value?.translationKey}/og-image-${locale.value}.png`,
+    'keywords': post.value?.tags,
+    'alternateName': translatedPost.value?.title,
+    ...translationRelation.value,
+  }),
+])
 </script>
 
 <template>
