@@ -19,6 +19,8 @@
     "@nuxt/fonts": "0.11.0",
     "@nuxtjs/robots": "5.2.8",
     "@nuxtjs/sitemap": "7.2.10",
+    "@vueuse/core": "^13.1.0",
+    "@vueuse/nuxt": "13.1.0",
     "eslint": "^9.0.0",
     "nuxt": "^3.16.2",
     "nuxt-schema-org": "5.0.4",

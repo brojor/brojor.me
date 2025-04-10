@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@unocss/nuxt',
     'nuxt-schema-org',
+    '@vueuse/nuxt',
   ],
   eslint: {
     config: {
