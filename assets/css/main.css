@@ -1,0 +1,8 @@
+h1 {
+    --uno: text-strong;
+}
+
+h2,
+h3 {
+    --uno: text-soft;
+}
