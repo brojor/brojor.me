@@ -4,6 +4,9 @@ export default defineI18nConfig(() => ({
   messages: {
     cs: {
       welcome: 'Vítejte',
+      blogListing: {
+        readMore: 'Číst článek',
+      },
       blog: {
         back: 'Zpět na blog',
         notFound: 'Článek nenalezen',
@@ -15,6 +18,9 @@ export default defineI18nConfig(() => ({
     },
     en: {
       welcome: 'Welcome',
+      blogListing: {
+        readMore: 'Read more',
+      },
       blog: {
         back: 'Back to blog',
         notFound: 'Post not found',

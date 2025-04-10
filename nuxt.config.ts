@@ -16,8 +16,20 @@ export default defineNuxtConfig({
     },
   },
   compatibilityDate: '2024-11-01',
-  content: { build: { markdown: { highlight: { theme: 'vitesse-dark', langs: ['vue'] } } } },
   css: ['~/assets/css/reset.css', '~/assets/css/markdown.css', '~/assets/css/prose.css', '~/assets/css/main.css'],
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            light: 'vitesse-light',
+            default: 'vitesse-dark',
+          },
+          langs: ['vue', 'css', 'shell'],
+        },
+      },
+    },
+  },
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/sitemap',
