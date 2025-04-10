@@ -26,32 +26,7 @@
 }
 
 .shiki {
-    /* background-color: #f8f8f8 !important; */
-}
-
-html.dark .shiki,
-html.dark .shiki span {
-    /* color: var(--s-dark) !important; */
-    background-color: #111 !important;
-}
-
-.prose {
-    --fg: #555;
-    --fg-deep: #222;
-    --fg-deeper: #000;
-
-    color: var(--fg);
-}
-
-.prose a:not(h2 a):not(h3 a):not(h4 a) {
-    font-weight: inherit;
-    text-decoration: none;
-    --uno: border-b border-accent-sea-green/50;
-    transition: border 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.prose a:not(h2 a):not(h3 a):not(h4 a):hover {
-    --uno: border-accent-sea-green;
+    --uno: bg-zinc-100 dark:bg-zinc-900;
 }
 
 .prose a code {
@@ -61,13 +36,6 @@ html.dark .shiki span {
 .prose hr {
     width: 50px;
     margin: 2em auto;
-}
-
-html.dark .prose {
-    --fg: #bbb;
-    --fg-mid: #ccc;
-    --fg-deep: #ddd;
-    --fg-deeper: #fff;
 }
 
 a.item {
