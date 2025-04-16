@@ -8,6 +8,12 @@ export default defineNuxtConfig({
       templateParams: {
         siteName: process.env.NUXT_PUBLIC_SITE_NAME,
       },
+      script: [
+        {
+          src: '/color-scheme-init.js',
+          type: 'text/javascript',
+        },
+      ],
     },
   },
   runtimeConfig: {
