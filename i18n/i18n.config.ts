@@ -15,6 +15,12 @@ export default defineI18nConfig(() => ({
         ogImageAlt: 'Blog – Praktické postřehy ze světa webových technologií',
         itemList: 'Seznam článků na blogu',
       },
+      toggleSwitcher: {
+        legend: {
+          lang: 'Jazyk',
+          theme: 'Barevný režim',
+        },
+      },
     },
     en: {
       welcome: 'Welcome',
@@ -28,6 +34,12 @@ export default defineI18nConfig(() => ({
         description: 'With a passion for the Vue.js ecosystem and web technologies, I share my experiences, practical insights, and elegant solutions to real-world development challenges.',
         ogImageAlt: 'Blog – Practical insights from the world of web technologies',
         itemList: 'List of blog posts',
+      },
+      toggleSwitcher: {
+        legend: {
+          lang: 'Language',
+          theme: 'Color scheme',
+        },
       },
     },
   },

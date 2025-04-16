@@ -6,6 +6,6 @@ const isDark = useDark()
 
 <template>
   <ClientOnly>
-    <ToggleSwitcher v-model="isDark" :options="[true, false]" />
+    <ToggleSwitcher id="theme" v-model="isDark" :options="[true, false]" />
   </ClientOnly>
 </template>

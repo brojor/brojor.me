@@ -7,6 +7,10 @@ const props = defineProps({
       return value.length === 2
     },
   },
+  id: {
+    type: String,
+    required: true,
+  },
 })
 
 const model = defineModel({
@@ -50,12 +54,11 @@ onMounted(() => {
 <template>
   <fieldset
     role="radiogroup"
-    aria-label="Přepínač jazyka"
     class="language-switch"
     style="--padding: 4px"
   >
     <legend class="sr-only">
-      Jazyk
+      {{ $t(`toggleSwitcher.legend.${id}`) }}
     </legend>
 
     <label
@@ -70,9 +73,8 @@ onMounted(() => {
         class="sr-only"
         type="radio"
         :value="option"
-        name="language"
-      >
-      {{ option }}
+        :name="id"
+      >{{ option }}
     </label>
 
     <div
