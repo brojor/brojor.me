@@ -18,7 +18,7 @@ readingTime: 10
 
 Na vícejazyčném webu je přepínač jazyků klíčovým prvkem uživatelského rozhraní. Tato nenápadná, ale důležitá komponenta musí být intuitivní, vizuálně srozumitelná a především [přístupná](https://developer.mozilla.org/en-US/docs/Web/Accessibility) pro všechny uživatele, včetně těch, kteří používají čtečky obrazovek nebo ovládají web pouze klávesnicí.
 
-### Časté nedostatky jazykových přepínačů
+## Časté nedostatky jazykových přepínačů
 
 Při implementaci jazykového přepínače často narážíme na několik běžných problémů:
 

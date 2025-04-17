@@ -18,7 +18,7 @@ readingTime: 10
 
 On a multilingual website, the language switcher is a key element of the user interface. This unobtrusive yet important component must be intuitive, visually clear, and above all [accessible](https://developer.mozilla.org/en-US/docs/Web/Accessibility) to all users, including those who use screen readers or navigate the web using only a keyboard.
 
-### Common Shortcomings of Language Switchers
+## Common Shortcomings of Language Switchers
 
 When implementing a language switcher, we often encounter several common issues:
 
