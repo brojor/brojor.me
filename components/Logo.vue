@@ -35,22 +35,22 @@ const svgPaths = {
         :key="`accent-${index}`"
         :d="path"
         :fill="colors.accent"
+        fill-rule="evenodd" clip-rule="evenodd"
       />
     </svg>
-
     <template #fallback>
       <svg width="97" height="30" viewBox="0 0 97 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           v-for="(path, index) in svgPaths.main"
           :key="`main-${index}`"
           :d="path"
-          fill="#1A1A1A"
+          fill="#71717a"
         />
         <path
           v-for="(path, index) in svgPaths.accent"
           :key="`accent-${index}`"
           :d="path"
-          fill="#00BFA3"
+          fill="#71717a"
           fill-rule="evenodd" clip-rule="evenodd"
         />
       </svg>

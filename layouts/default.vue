@@ -40,10 +40,12 @@ useSchemaOrg([
         </template>
       </Head>
       <Body class="font-sans bg-default text-default">
-        <header class="flex justify-between items-center px-8 py-2 border-b border-b-black/20 dark:border-b-white/20">
+        <header class="flex justify-between items-center px-8 h-[51px] border-b border-b-black/20 dark:border-b-white/20">
           <Logo />
-          <ThemeSwitcher />
-          <LanguageSwitcher />
+          <div class="flex gap-2">
+            <ThemeSwitcher />
+            <LanguageSwitcher />
+          </div>
         </header>
         <slot />
         <footer class="mt-8 border-t border-t-black/20 dark:border-t-white/20">
