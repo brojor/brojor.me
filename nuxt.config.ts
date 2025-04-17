@@ -37,6 +37,12 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
+  icon: {
+    aliases: {
+      darkMode: 'material-symbols:dark-mode-outline-rounded',
+      lightMode: 'material-symbols:light-mode-outline-rounded',
+    },
+  },
   modules: [
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
@@ -47,6 +53,7 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     'nuxt-schema-org',
     '@vueuse/nuxt',
+    '@nuxt/icon',
   ],
   eslint: {
     config: {
