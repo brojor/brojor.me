@@ -54,7 +54,7 @@ onMounted(() => {
 <template>
   <fieldset
     role="radiogroup"
-    class="language-switch"
+    class="toggle-switch"
     style="--padding: 4px"
   >
     <legend class="sr-only">
@@ -65,8 +65,8 @@ onMounted(() => {
       v-for="(option, index) in options"
       :key="index"
       :ref="el => optionRefs[index].value = el"
-      class="language-option"
-      :class="{ 'language-option-active': model === option }"
+      class="toggle-option"
+      :class="{ 'toggle-option-active': model === option }"
     >
       <input
         v-model="model"
@@ -78,7 +78,7 @@ onMounted(() => {
     </label>
 
     <div
-      class="language-slider"
+      class="toggle-slider"
       aria-hidden="true"
       :style="sliderStyle"
     />
@@ -86,7 +86,7 @@ onMounted(() => {
 </template>
 
 <style>
-  .language-option:has(input:focus-visible) {
+  .toggle-option:has(input:focus-visible) {
     outline: 1px solid #5DA994;
   }
 </style>
