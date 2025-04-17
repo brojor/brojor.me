@@ -11,14 +11,19 @@ watch(modelValue, (val) => {
   }, 150)
 })
 
-const options = [{ icon: 'darkMode', value: true, label: t('themeSwitcher.dark') }, { icon: 'lightMode', value: false, label: t('themeSwitcher.light') }]
+const options = computed(() => [
+  { icon: 'darkMode', value: true, label: t('themeSwitcher.dark') },
+  { icon: 'lightMode', value: false, label: t('themeSwitcher.light') },
+])
 </script>
 
 <template>
   <ClientOnly>
     <ToggleSwitcher id="theme" v-model="modelValue" :options="options" />
     <template #fallback>
-      <div class="w-[82px] h-[34px] border border-black/10 dark:border-white/10 rounded-lg flex items-center text-zinc-500">
+      <div
+        class="w-[82px] h-[34px] border border-black/10 dark:border-white/10 rounded-lg flex items-center text-zinc-500"
+      >
         <div class="pl-[12px] py-[2px]">
           <Icon name="darkMode" :size="20" />
         </div>
