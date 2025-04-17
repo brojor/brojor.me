@@ -25,6 +25,9 @@ export default defineI18nConfig(() => ({
         dark: 'Tmavý režim',
         light: 'Světlý režim',
       },
+      blogMeta: {
+        readingTime: 'min čtení',
+      },
     },
     en: {
       welcome: 'Welcome',
@@ -48,6 +51,9 @@ export default defineI18nConfig(() => ({
       themeSwitcher: {
         dark: 'Dark mode',
         light: 'Light mode',
+      },
+      blogMeta: {
+        readingTime: 'min read',
       },
     },
   },
