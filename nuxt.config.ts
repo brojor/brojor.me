@@ -8,6 +8,12 @@ export default defineNuxtConfig({
       templateParams: {
         siteName: process.env.NUXT_PUBLIC_SITE_NAME,
       },
+      script: [
+        {
+          src: '/color-scheme-init.js',
+          type: 'text/javascript',
+        },
+      ],
     },
   },
   runtimeConfig: {
@@ -16,9 +22,27 @@ export default defineNuxtConfig({
     },
   },
   compatibilityDate: '2024-11-01',
-  content: { build: { markdown: { highlight: { theme: 'vitesse-dark', langs: ['vue'] } } } },
-  css: ['~/assets/css/reset.css', '~/assets/css/markdown.css', '~/assets/css/prose.css'],
+  css: ['~/assets/css/reset.css', '~/assets/css/markdown.css', '~/assets/css/prose.css', '~/assets/css/main.css'],
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            light: 'vitesse-light',
+            default: 'vitesse-dark',
+          },
+          langs: ['vue', 'css', 'shell'],
+        },
+      },
+    },
+  },
   devtools: { enabled: true },
+  icon: {
+    aliases: {
+      darkMode: 'material-symbols:dark-mode-outline-rounded',
+      lightMode: 'material-symbols:light-mode-outline-rounded',
+    },
+  },
   modules: [
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
@@ -28,6 +52,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@unocss/nuxt',
     'nuxt-schema-org',
+    '@vueuse/nuxt',
+    '@nuxt/icon',
   ],
   eslint: {
     config: {

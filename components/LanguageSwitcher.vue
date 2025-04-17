@@ -18,5 +18,5 @@ async function switchLocale(code: 'en' | 'cs') {
 </script>
 
 <template>
-  <ToggleSwitcher :model-value="locale" :options="locales.map(loc => loc.code)" @update:model-value="switchLocale" />
+  <ToggleSwitcher id="lang" :model-value="locale" :options="locales.map(loc => ({ value: loc.code }))" label="Jazyk" @update:model-value="switchLocale($event as 'cs' | 'en')" />
 </template>

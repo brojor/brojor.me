@@ -1,5 +1,4 @@
 .prose {
-    color: var(--fg);
     max-width: 65ch;
     font-size: 1rem;
     line-height: 1.75;
@@ -14,17 +13,18 @@
 }
 
 .prose a:not(:where(h2 a, h3 a, h4 a)) {
-    --uno: text-accent-sea-green/90;
+    --uno: text-accent-light dark:text-accent-dark border-b border-accent;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: inherit;
+    transition: border 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .prose a:not(:where(h2 a, h3 a, h4 a)):hover {
-    --uno: text-accent-sea-green;
+    --uno: text-accent-light dark:text-accent-dark border-accent;
 }
 
 .prose strong {
-    color: var(--fg-deep);
+    --uno: text-soft;
     font-weight: 600;
 }
 
@@ -73,8 +73,12 @@
     content: counter(list-item, var(--list-counter-style, decimal)) '.';
     position: absolute;
     font-weight: 400;
-    color: var(--fg-deep);
+    --uno: text-soft;
     left: 0;
+}
+
+.prose ol>li:has(> strong)::before {
+    font-weight: bolder;
 }
 
 .prose ul>li {
@@ -85,7 +89,7 @@
 .prose ul>li::before {
     content: '';
     position: absolute;
-    background-color: #d1d5db;
+    --uno: bg-black-mute dark:bg-white-mute;
     border-radius: 50%;
     width: 0.375em;
     height: 0.375em;
@@ -120,7 +124,6 @@
 }
 
 .prose h1 {
-    color: var(--fg-deeper);
     font-weight: 800;
     font-size: 2.25em;
     margin-top: 0;
@@ -129,7 +132,6 @@
 }
 
 .prose h2 {
-    color: var(--fg-deep);
     font-weight: 700;
     font-size: 1.5em;
     margin-top: 2em;
@@ -138,7 +140,6 @@
 }
 
 .prose h3 {
-    color: var(--fg-mid);
     font-weight: 600;
     font-size: 1.25em;
     margin-top: 1.6em;
@@ -162,11 +163,9 @@
 }
 
 .prose code {
-    --uno: font-mono;
-    color: #C98A7D;
     font-weight: 500;
     font-size: 0.875em;
-    background-color: #151515;
+    --uno: font-mono text-accent-coral-peach bg-zinc-100 dark:bg-zinc-900;
     border-radius: 0.25rem;
     padding: 0.2em 0.4em;
     margin: -0.2em 0;
@@ -202,7 +201,6 @@
     font-weight: 400;
     color: inherit;
     font-size: inherit;
-    /* font-family: inherit; */
     line-height: inherit;
 }
 
@@ -225,7 +223,7 @@
 }
 
 .prose thead {
-    color: var(--fg-deep);
+    --uno: text-soft;
     font-weight: 600;
     border-bottom-width: 1px;
     border-bottom-color: #8882;
@@ -381,7 +379,7 @@
 }
 
 .prose b {
-    color: var(--fg-deep);
+    --uno: text-soft;
 }
 
 .prose em {
