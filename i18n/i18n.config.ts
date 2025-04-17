@@ -21,6 +21,10 @@ export default defineI18nConfig(() => ({
           theme: 'Barevný režim',
         },
       },
+      themeSwitcher: {
+        dark: 'Tmavý režim',
+        light: 'Světlý režim',
+      },
     },
     en: {
       welcome: 'Welcome',
@@ -40,6 +44,10 @@ export default defineI18nConfig(() => ({
           lang: 'Language',
           theme: 'Color scheme',
         },
+      },
+      themeSwitcher: {
+        dark: 'Dark mode',
+        light: 'Light mode',
       },
     },
   },

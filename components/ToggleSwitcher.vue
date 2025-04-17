@@ -1,6 +1,7 @@
 <script setup lang="ts">
 interface Option {
   icon?: string
+  label?: string
   value: string | number | boolean
 }
 
@@ -89,6 +90,9 @@ onMounted(() => {
       >
       <template v-if="option.icon">
         <Icon :name="option.icon" :size="20" />
+        <span class="sr-only">
+          {{ option.label }}
+        </span>
       </template>
       <template v-else>
         {{ option.value }}

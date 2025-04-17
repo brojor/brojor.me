@@ -2,6 +2,7 @@
 import { useDark } from '@vueuse/core'
 
 const isDark = useDark()
+const { t } = useI18n()
 const modelValue = ref(isDark.value)
 
 watch(modelValue, (val) => {
@@ -10,7 +11,7 @@ watch(modelValue, (val) => {
   }, 150)
 })
 
-const options = [{ icon: 'darkMode', value: true }, { icon: 'lightMode', value: false }]
+const options = [{ icon: 'darkMode', value: true, label: t('themeSwitcher.dark') }, { icon: 'lightMode', value: false, label: t('themeSwitcher.light') }]
 </script>
 
 <template>
