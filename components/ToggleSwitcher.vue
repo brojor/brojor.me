@@ -1,9 +1,9 @@
-<script setup>
+<script setup lang="ts">
 const props = defineProps({
   options: {
-    type: Array,
+    type: Array as PropType<string[]>,
     required: true,
-    validator(value) {
+    validator(value: string[]) {
       return value.length === 2
     },
   },
@@ -13,11 +13,11 @@ const props = defineProps({
   },
 })
 
-const model = defineModel({
+const model = defineModel<string>({
   required: true,
 })
 
-const optionRefs = [ref(null), ref(null)]
+const optionRefs = [ref<HTMLElement | null>(null), ref<HTMLElement | null>(null)]
 const widths = ref({ first: 0, second: 0 })
 const isInitialized = ref(false)
 
@@ -64,7 +64,7 @@ onMounted(() => {
     <label
       v-for="(option, index) in options"
       :key="index"
-      :ref="el => optionRefs[index].value = el"
+      :ref="(el) => optionRefs[index].value = el as HTMLElement"
       class="toggle-option"
       :class="{ 'toggle-option-active': model === option }"
     >
@@ -86,7 +86,7 @@ onMounted(() => {
 </template>
 
 <style>
-  .toggle-option:has(input:focus-visible) {
+  .toggle-switch:has(input:focus-visible) {
     outline: 1px solid #5DA994;
   }
 </style>
