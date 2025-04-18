@@ -28,6 +28,12 @@ export default defineI18nConfig(() => ({
       blogMeta: {
         readingTime: 'min čtení',
       },
+      landingPage: {
+        hi: 'Ahoj',
+        iAm: 'jsem',
+        webDeveloper: 'webový vývojář',
+        description: 'Rád tvořím nápaditá řešení pomocí webových technologií',
+      },
     },
     en: {
       welcome: 'Welcome',
@@ -54,6 +60,12 @@ export default defineI18nConfig(() => ({
       },
       blogMeta: {
         readingTime: 'min read',
+      },
+      landingPage: {
+        hi: 'Hi',
+        iAm: 'I am',
+        webDeveloper: 'web developer',
+        description: 'I like to create amazing things using web technologies',
       },
     },
   },

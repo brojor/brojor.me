@@ -37,10 +37,9 @@ export default defineConfig({
       'white-soft': '#ddd',
     },
     fontFamily: {
-      condensed: 'Roboto Condensed',
       mono: 'DM Mono',
       sans: 'Inter',
-      wisper: 'Bad Script',
+      special: 'Open Sans Mono',
     },
   },
   transformers: [
