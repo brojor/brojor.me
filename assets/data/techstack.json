@@ -1,0 +1,203 @@
+{
+  "frontend": [
+    {
+      "name": "HTML",
+      "icon": "vscode-icons:file-type-html",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+    },
+    {
+      "name": "CSS",
+      "icon": "vscode-icons:file-type-css",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "vscode-icons:file-type-js-official",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    },
+    {
+      "name": "TypeScript",
+      "icon": "vscode-icons:file-type-typescript-official",
+      "url": "https://www.typescriptlang.org/"
+    },
+    {
+      "name": "Markdown",
+      "icon": "custom:markdown",
+      "url": "https://www.markdownguide.org/"
+    },
+    {
+      "name": "Vue",
+      "icon": "vscode-icons:file-type-vue",
+      "url": "https://vuejs.org/"
+    },
+    {
+      "name": "Nuxt",
+      "icon": "vscode-icons:file-type-nuxt",
+      "url": "https://nuxt.com/"
+    },
+    {
+      "name": "Pinia",
+      "icon": "custom:pinia",
+      "url": "https://pinia.vuejs.org/"
+    },
+    {
+      "name": "UnoCSS",
+      "icon": "vscode-icons:file-type-unocss",
+      "url": "https://unocss.dev/"
+    },
+    {
+      "name": "Tailwind",
+      "icon": "vscode-icons:file-type-tailwind",
+      "url": "https://tailwindcss.com/"
+    },
+    {
+      "name": "Bootstrap",
+      "icon": "custom:bootstrap",
+      "url": "https://getbootstrap.com/"
+    },
+    {
+      "name": "SASS",
+      "icon": "vscode-icons:file-type-sass",
+      "url": "https://sass-lang.com/"
+    },
+    {
+      "name": "Vite",
+      "icon": "vscode-icons:file-type-vite",
+      "url": "https://vitejs.dev/"
+    },
+    {
+      "name": "Vitest",
+      "icon": "vscode-icons:file-type-vitest",
+      "url": "https://vitest.dev/"
+    }
+  ],
+  "backendAndHybrid": [
+    {
+      "name": "Node.js",
+      "icon": "vscode-icons:file-type-node",
+      "url": "https://nodejs.org/"
+    },
+    {
+      "name": "Express.js",
+      "icon": "custom:express",
+      "url": "https://expressjs.com/"
+    },
+    {
+      "name": "Adonis",
+      "icon": "custom:adonis",
+      "url": "https://adonisjs.com/"
+    },
+    {
+      "name": "SQL",
+      "icon": "vscode-icons:file-type-sql",
+      "url": "https://www.w3schools.com/sql/"
+    },
+    {
+      "name": "MongoDB",
+      "icon": "vscode-icons:file-type-mongo",
+      "url": "https://www.mongodb.com/"
+    },
+    {
+      "name": "Ionic",
+      "icon": "vscode-icons:file-type-ionic",
+      "url": "https://ionicframework.com/"
+    },
+    {
+      "name": "Capacitor",
+      "icon": "vscode-icons:file-type-capacitor",
+      "url": "https://capacitorjs.com/"
+    },
+    {
+      "name": "Electron",
+      "icon": "custom:electron",
+      "url": "https://www.electronjs.org/"
+    }
+  ],
+  "tools": [
+    {
+      "name": "Figma",
+      "icon": "custom:figma",
+      "url": "https://www.figma.com/"
+    },
+    {
+      "name": "VS Code",
+      "icon": "vscode-icons:file-type-vscode",
+      "url": "https://code.visualstudio.com/"
+    },
+    {
+      "name": "Neovim",
+      "icon": "custom:neovim",
+      "url": "https://neovim.io/"
+    },
+    {
+      "name": "Git",
+      "icon": "custom:git",
+      "url": "https://git-scm.com/"
+    },
+    {
+      "name": "GitHub",
+      "icon": "custom:github",
+      "url": "https://github.com/"
+    },
+    {
+      "name": "NPM",
+      "icon": "custom:npm",
+      "url": "https://www.npmjs.com/"
+    },
+    {
+      "name": "PNPM",
+      "icon": "custom:pnpm",
+      "url": "https://pnpm.io/"
+    },
+    {
+      "name": "ESLint",
+      "icon": "vscode-icons:file-type-eslint",
+      "url": "https://eslint.org/"
+    },
+    {
+      "name": "Heroku",
+      "icon": "custom:heroku",
+      "url": "https://www.heroku.com/"
+    },
+    {
+      "name": "Netlify",
+      "icon": "vscode-icons:file-type-light-netlify",
+      "url": "https://www.netlify.com/"
+    },
+    {
+      "name": "Insomnia",
+      "icon": "custom:insomnia",
+      "url": "https://insomnia.rest/"
+    },
+    {
+      "name": "Notion",
+      "icon": "custom:notion",
+      "url": "https://www.notion.so/"
+    },
+    {
+      "name": "Slack",
+      "icon": "custom:slack",
+      "url": "https://slack.com/"
+    },
+    {
+      "name": "Raycast",
+      "icon": "custom:raycast",
+      "url": "https://www.raycast.com/"
+    },
+    {
+      "name": "CLI",
+      "icon": "vscode-icons:file-type-shell",
+      "url": "https://en.wikipedia.org/wiki/Command-line_interface"
+    },
+    {
+      "name": "Claude",
+      "icon": "custom:claude",
+      "url": "https://claude.ai/"
+    },
+    {
+      "name": "Apple",
+      "icon": "custom:apple",
+      "url": "https://www.apple.com/"
+    }
+  ]
+}

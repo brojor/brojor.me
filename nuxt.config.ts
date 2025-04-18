@@ -68,6 +68,12 @@ export default defineNuxtConfig({
       darkMode: 'material-symbols:dark-mode-outline-rounded',
       lightMode: 'material-symbols:light-mode-outline-rounded',
     },
+    customCollections: [
+      {
+        dir: './assets/icons',
+        prefix: 'custom',
+      },
+    ],
   },
   modules: [
     '@nuxtjs/sitemap',

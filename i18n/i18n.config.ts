@@ -33,6 +33,12 @@ export default defineI18nConfig(() => ({
         iAm: 'jsem',
         webDeveloper: 'webový vývojář',
         description: 'Rád tvořím nápaditá řešení pomocí webových technologií',
+        techStack: {
+          title: 'Technologie',
+          frontend: 'Frontend',
+          backendAndHybrid: 'Backend a hybridní vývoj',
+          tools: 'Nástroje',
+        },
       },
     },
     en: {
@@ -66,6 +72,12 @@ export default defineI18nConfig(() => ({
         iAm: 'I am',
         webDeveloper: 'web developer',
         description: 'I like to create amazing things using web technologies',
+        techStack: {
+          title: 'Tech Stack',
+          frontend: 'Frontend',
+          backendAndHybrid: 'Backend and hybrid',
+          tools: 'Tools',
+        },
       },
     },
   },

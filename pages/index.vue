@@ -1,4 +1,6 @@
 <script setup>
+import techstack from '@/assets/data/techstack.json'
+
 definePageMeta({
   title: 'welcome',
 })
@@ -15,6 +17,23 @@ definePageMeta({
       <p class="text-xl mt-5">
         {{ $t('landingPage.description') }}
       </p>
+    </section>
+    <section class="mt-20">
+      <h2 class="text-3xl font-semibold mb-10">
+        {{ $t('landingPage.techStack.title') }}
+      </h2>
+
+      <div v-for="(items, category) in techstack" :key="category" class="mt-8">
+        <h3 class="text-xl font-medium mb-5">
+          {{ $t(`landingPage.techStack.${category}`) }}
+        </h3>
+
+        <div class="flex flex-wrap gap-2">
+          <div v-for="item in items" :key="item.name">
+            <Icon :name="item.icon" size="4rem" />
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </template>
