@@ -22,12 +22,12 @@ const options = computed(() => [
     <ToggleSwitcher id="theme" v-model="modelValue" :options="options" />
     <template #fallback>
       <div
-        class="w-[82px] h-[34px] border border-black/10 dark:border-white/10 rounded-lg flex items-center text-zinc-500"
+        class="w-[78px] h-[28px] border border-black/15 dark:border-white/15 rounded-lg flex items-center text-zinc-500 p-[2px]"
       >
-        <div class="pl-[12px] py-[2px]">
+        <div class="w-[36px] h-[22px] flex items-center justify-center">
           <Icon name="darkMode" :size="20" />
         </div>
-        <div class="pl-[16px] py-[2px]">
+        <div class="w-[36px] h-[22px] flex items-center justify-center">
           <Icon name="lightMode" :size="20" />
         </div>
       </div>
