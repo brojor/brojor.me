@@ -7,7 +7,7 @@ definePageMeta({
 </script>
 
 <template>
-  <main class="max-w-[65ch] mx-auto px-4 sm:px-6">
+  <main class="max-w-[65ch] mx-auto">
     <section class="my-16 md:my-32">
       <h1 class="text-4xl md:text-6xl font-bold">
         {{ $t('landingPage.hi') }}, <br>

@@ -23,21 +23,23 @@ const svgPaths = {
 
 <template>
   <ClientOnly>
-    <svg width="97" height="30" viewBox="0 0 97 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        v-for="(path, index) in svgPaths.main"
-        :key="`main-${index}`"
-        :d="path"
-        :fill="colors.main"
-      />
-      <path
-        v-for="(path, index) in svgPaths.accent"
-        :key="`accent-${index}`"
-        :d="path"
-        :fill="colors.accent"
-        fill-rule="evenodd" clip-rule="evenodd"
-      />
-    </svg>
+    <NuxtLinkLocale to="/">
+      <svg width="97" height="30" viewBox="0 0 97 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          v-for="(path, index) in svgPaths.main"
+          :key="`main-${index}`"
+          :d="path"
+          :fill="colors.main"
+        />
+        <path
+          v-for="(path, index) in svgPaths.accent"
+          :key="`accent-${index}`"
+          :d="path"
+          :fill="colors.accent"
+          fill-rule="evenodd" clip-rule="evenodd"
+        />
+      </svg>
+    </NuxtLinkLocale>
     <template #fallback>
       <svg width="97" height="30" viewBox="0 0 97 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path

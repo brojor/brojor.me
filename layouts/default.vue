@@ -40,9 +40,13 @@ useSchemaOrg([
         </template>
       </Head>
       <Body class="font-sans bg-default text-default">
-        <header class="flex justify-between items-center px-8 h-[51px] border-b border-b-black/20 dark:border-b-white/20">
+        <header class="flex justify-between items-center h-[51px]">
           <Logo />
-          <div class="flex gap-2">
+          <div class="flex gap-2 items-center">
+            <NuxtLinkLocale to="/blog" class="text-lg font-medium hover:text-strong transition-colors mr-2 flex items-center gap-1">
+              <Icon name="material-symbols:article-outline" class="w-6 h-6" />
+              Blog
+            </NuxtLinkLocale>
             <ThemeSwitcher />
             <LanguageSwitcher />
           </div>
@@ -50,7 +54,7 @@ useSchemaOrg([
         <slot />
         <footer class="mt-8 border-t border-t-black/20 dark:border-t-white/20">
           <div class="max-w-[65ch] mx-auto">
-            <div class="py-4 text-sm">
+            <div class="py-4 text-sm text-center">
               <div>
                 &copy; {{ new Date().getFullYear() }} Bronislav Jordán
                 <span class="ml-2">
