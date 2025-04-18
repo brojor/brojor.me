@@ -30,12 +30,12 @@ definePageMeta({
             {{ $t(`landingPage.techStack.${category}`) }}:
           </h3>
           <div class="flex flex-wrap gap-2 justify-center sm:justify-start">
-            <div v-for="item in items" :key="item.name" class="border border-white/20 w-[98px] md:w-[114px] py-3 md:py-4 rounded-lg">
+            <NuxtLink v-for="item in items" :key="item.name" :to="item.url" target="_blank" class="border border-white/20 w-[98px] md:w-[114px] py-3 md:py-4 rounded-lg">
               <Icon :name="item.icon" class="mx-auto opacity-90 h-10 w-10 md:h-12 md:w-12" />
               <p class="text-center text-xs md:text-sm mt-2 md:mt-3">
                 {{ item.name }}
               </p>
-            </div>
+            </NuxtLink>
           </div>
         </div>
       </div>
