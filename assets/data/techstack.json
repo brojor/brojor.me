@@ -195,6 +195,11 @@
       "url": "https://claude.ai/"
     },
     {
+      "name": "ChatGPT",
+      "icon": "custom:chatgpt",
+      "url": "https://chatgpt.com/"
+    },
+    {
       "name": "MacBook Air",
       "icon": "custom:apple",
       "url": "https://www.apple.com/"
