@@ -115,9 +115,9 @@
   ],
   "tools": [
     {
-      "name": "Figma",
-      "icon": "custom:figma",
-      "url": "https://www.figma.com/"
+      "name": "Cursor",
+      "icon": "custom:cursor",
+      "url": "https://www.cursor.com/"
     },
     {
       "name": "VS Code",
@@ -128,6 +128,11 @@
       "name": "Neovim",
       "icon": "custom:neovim",
       "url": "https://neovim.io/"
+    },
+    {
+      "name": "Figma",
+      "icon": "custom:figma",
+      "url": "https://www.figma.com/"
     },
     {
       "name": "Git",
