@@ -68,7 +68,7 @@ onMounted(() => {
   <fieldset
     role="radiogroup"
     class="toggle-switch"
-    style="--padding: 4px"
+    style="--padding: 2px"
   >
     <legend class="sr-only">
       {{ $t(`toggleSwitcher.legend.${id}`) }}

@@ -19,10 +19,10 @@ export default defineConfig({
     'text-default': 'text-black-mute dark:text-white-mute',
     'text-soft': 'text-black-soft dark:text-white-soft',
     'text-strong': 'text-black dark:text-white',
-    'toggle-option': 'px-2 py-[2px] rounded-md z-1 cursor-pointer select-none text-sm font-medium transition-colors text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-400',
+    'toggle-option': 'px-2 py-[1px] rounded-md z-1 cursor-pointer select-none text-sm font-medium transition-colors text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-400',
     'toggle-option-active': 'text-black dark:text-zinc-50 hover:text-black dark:hover:text-zinc-50',
     'toggle-slider': 'absolute top-[var(--padding)] left-[var(--padding)] switcher-slider-height bg-accent-light/70 dark:bg-accent-dark/70 rounded-md transition-all duration-300 pointer-events-none',
-    'toggle-switch': 'relative inline-flex rounded-lg bg-zinc-100/80 dark:bg-zinc-900/80 border border-black/10 dark:border-white/10 p-[var(--padding)] transition-colors',
+    'toggle-switch': 'relative inline-flex rounded-lg bg-zinc-100/80 dark:bg-zinc-900/80 border border-black/15 dark:border-white/15 hover:border-black/30 dark:hover:border-white/30 p-[var(--padding)] transition-colors',
   },
   theme: {
     colors: {
