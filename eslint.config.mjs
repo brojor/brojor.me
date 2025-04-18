@@ -10,4 +10,10 @@ export default withNuxt(
       'no-irregular-whitespace': 'off',
     },
   },
+  {
+    files: ['nuxt.config.ts', 'uno.config.ts'],
+    rules: {
+      'perfectionist/sort-objects': 'error',
+    },
+  },
 )

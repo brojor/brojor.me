@@ -4,39 +4,65 @@ import process from 'node:process'
 export default defineNuxtConfig({
   app: {
     head: {
-      titleTemplate: '%s %separator %siteName',
-      templateParams: {
-        siteName: process.env.NUXT_PUBLIC_SITE_NAME,
-      },
       script: [
         {
           src: '/color-scheme-init.js',
           type: 'text/javascript',
         },
       ],
-    },
-  },
-  runtimeConfig: {
-    public: {
-      siteName: process.env.NUXT_PUBLIC_SITE_NAME,
+      templateParams: {
+        siteName: process.env.NUXT_PUBLIC_SITE_NAME,
+      },
+      titleTemplate: '%s %separator %siteName',
     },
   },
   compatibilityDate: '2024-11-01',
-  css: ['~/assets/css/reset.css', '~/assets/css/markdown.css', '~/assets/css/prose.css', '~/assets/css/main.css'],
   content: {
     build: {
       markdown: {
         highlight: {
-          theme: {
-            light: 'vitesse-light',
-            default: 'vitesse-dark',
-          },
           langs: ['vue', 'css', 'shell'],
+          theme: {
+            default: 'vitesse-dark',
+            light: 'vitesse-light',
+          },
         },
       },
     },
   },
+  css: ['~/assets/css/reset.css', '~/assets/css/markdown.css', '~/assets/css/prose.css', '~/assets/css/main.css'],
   devtools: { enabled: true },
+  eslint: {
+    config: {
+      standalone: false,
+    },
+  },
+  i18n: {
+    baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
+    defaultLocale: 'cs',
+    detectBrowserLanguage: {
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      useCookie: true,
+    },
+    locales: [
+      {
+        code: 'cs',
+        language: 'cs-CZ',
+        name: 'Česky',
+      },
+      {
+        code: 'en',
+        language: 'en-US',
+        name: 'English',
+      },
+    ],
+    strategy: 'prefix_except_default',
+    vueI18n: './i18n.config.ts',
+  },
   icon: {
     aliases: {
       darkMode: 'material-symbols:dark-mode-outline-rounded',
@@ -55,43 +81,17 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/icon',
   ],
-  eslint: {
-    config: {
-      standalone: false,
+  runtimeConfig: {
+    public: {
+      siteName: process.env.NUXT_PUBLIC_SITE_NAME,
     },
+  },
+  schemaOrg: {
+    defaults: false,
   },
   sitemap: {
     sources: [
       '/api/__sitemap__/urls',
     ],
-  },
-  schemaOrg: {
-    defaults: false,
-  },
-  i18n: {
-    strategy: 'prefix_except_default',
-    defaultLocale: 'cs',
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
-    },
-    bundle: {
-      optimizeTranslationDirective: false,
-    },
-    locales: [
-      {
-        code: 'cs',
-        language: 'cs-CZ',
-        name: 'Česky',
-      },
-      {
-        code: 'en',
-        language: 'en-US',
-        name: 'English',
-      },
-    ],
-    baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
-    vueI18n: './i18n.config.ts',
   },
 })
