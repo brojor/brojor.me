@@ -32,7 +32,7 @@ export default defineI18nConfig(() => ({
         hi: 'Ahoj',
         iAm: 'jsem',
         webDeveloper: 'webový vývojář',
-        description: 'Rád tvořím nápaditá řešení pomocí webových technologií',
+        description: 'Rád vytvářím úžasné věci pomocí webových technologií',
         techStack: {
           title: 'Technologie',
           frontend: 'Frontend',
