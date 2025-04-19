@@ -19,8 +19,10 @@ definePageMeta({
       </p>
     </section>
     <section>
-      <h2 class="text-2xl font-semibold md:text-3xl">
-        {{ $t('landingPage.techStack.title') }}
+      <h2 :id="`${$t('landingPage.techStack.title')}`" class="text-2xl font-semibold md:text-3xl">
+        <NuxtLink :to="`#${$t('landingPage.techStack.title')}`">
+          {{ $t('landingPage.techStack.title') }}
+        </NuxtLink>
       </h2>
       <hr class="mb-6 mt-3 border-accent-light/50 md:mb-10 md:mt-4">
 
