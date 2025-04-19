@@ -32,7 +32,7 @@ useSchemaOrg(schema)
     <div v-else>
       <h1>{{ t('blog.notFound') }}</h1>
     </div>
-    <NuxtLinkLocale to="/blog" class="not-prose mt-8 text-xs inline-block">
+    <NuxtLinkLocale to="/blog" class="not-prose mt-8 inline-block text-xs">
       {{ t('blog.back') }}
     </NuxtLinkLocale>
   </div>

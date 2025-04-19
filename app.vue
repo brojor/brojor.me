@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout class="flex flex-col min-h-screen px-4 sm:px-6 pt-[46px]">
+  <NuxtLayout class="min-h-screen flex flex-col px-4 pt-[46px] sm:px-6">
     <NuxtPage class="flex-1" />
   </NuxtLayout>
 </template>
