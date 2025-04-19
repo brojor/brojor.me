@@ -10,6 +10,7 @@ export default defineConfig({
       '--un-gradient-shape': `${deg}`,
     })],
     ['switcher-slider-height', { height: 'calc(100% - calc(var(--padding) * 2))' }],
+    ['header-backdrop', { '-webkit-backdrop-filter': 'saturate(180%) blur(20px)', 'backdrop-filter': 'saturate(180%) blur(20px)' }],
   ],
   shortcuts: {
     'bg-default': 'bg-white dark:bg-zinc-950',

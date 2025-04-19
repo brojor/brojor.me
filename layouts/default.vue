@@ -40,7 +40,7 @@ useSchemaOrg([
         </template>
       </Head>
       <Body class="font-sans bg-default text-default">
-        <header class="flex justify-between items-center h-[51px] fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 bg-white/90 dark:bg-zinc-950/90 backdrop-blur">
+        <header class="flex justify-between items-center h-[51px] fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 bg-white/70 dark:bg-zinc-950/70 header-backdrop">
           <Logo />
           <div class="flex gap-2 items-center">
             <NuxtLinkLocale to="/blog" class="text-lg font-medium hover:text-strong transition-colors mr-2 flex items-center gap-1">
