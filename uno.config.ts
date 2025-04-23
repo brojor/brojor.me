@@ -47,4 +47,14 @@ export default defineConfig({
   transformers: [
     transformerDirectives(),
   ],
+  variants: [
+    (matcher) => {
+      if (!matcher.startsWith('hoverable:'))
+        return matcher
+      return {
+        matcher: matcher.slice(10),
+        parent: '@media (hover: hover)',
+      }
+    },
+  ],
 })
