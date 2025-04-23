@@ -16,6 +16,7 @@ export default defineConfig({
     'bg-default': 'bg-white dark:bg-zinc-950',
     'border-accent': 'border-accent-light/40 dark:border-accent-dark/40 hover:border-accent-light dark:hover:border-accent-dark',
     'border-card': 'border-black/10 dark:border-white/10 hover:border-accent-light/60 dark:hover:border-accent-dark/40',
+    'flex-center': 'flex items-center justify-center',
     'text-accent': 'text-accent-light dark:text-accent-dark',
     'text-default': 'text-black-mute dark:text-white-mute',
     'text-soft': 'text-black-soft dark:text-white-soft',
