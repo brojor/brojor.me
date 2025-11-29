@@ -39,9 +39,9 @@ export default defineConfig({
       'white-soft': '#ddd',
     },
     fontFamily: {
-      mono: 'DM Mono',
-      sans: 'Inter',
-      special: 'Open Sans Mono',
+      'landing-page': 'Geist Mono',
+      'mono': 'DM Mono',
+      'sans': 'Inter',
     },
   },
   transformers: [

@@ -8,16 +8,16 @@ definePageMeta({
 </script>
 
 <template>
-  <main class="mx-auto max-w-[75ch]">
+  <main class="mx-auto max-w-[75ch] font-landing-page">
     <section class="my-16 flex flex-col items-center md:my-32 md:flex-row">
       <div class="[container-type:inline-size] w-full md:w-[65%]">
-        <h1 class="text-[clamp(1.75rem,8cqw,3.5rem)] font-bold leading-tight">
+        <h1 class="text-[32px] font-bold leading-tight md:text-[40px]">
           {{ $t('landingPage.hi') }}, <br>
           {{ $t('landingPage.iAm') }} <BroJor />,
           <br>{{ $t('landingPage.webDeveloper') }}.
         </h1>
-        <p class="mt-4 text-[clamp(1.125rem,4cqw,1.75rem)] md:mt-5">
-          {{ $t('landingPage.description') }}
+        <p class="mt-4 text-[20px] md:mt-5">
+          {{ $t('landingPage.description') }}.
         </p>
       </div>
       <div class="hidden w-full md:w-[35%] md:flex md:justify-end">
@@ -28,7 +28,7 @@ definePageMeta({
       </div>
     </section>
     <section>
-      <h2 :id="`${$t('landingPage.techStack.title')}`" class="text-2xl font-semibold md:text-3xl">
+      <h2 :id="`${$t('landingPage.techStack.title')}`" class="text-[22px] font-semibold md:text-[26px]">
         <NuxtLink :to="`#${$t('landingPage.techStack.title')}`">
           {{ $t('landingPage.techStack.title') }}
         </NuxtLink>
@@ -37,7 +37,7 @@ definePageMeta({
 
       <div class="space-y-10 md:space-y-12">
         <article v-for="(items, category) in techstack" :key="category">
-          <h3 class="mb-4 text-lg font-medium md:mb-5 md:text-xl">
+          <h3 class="mb-4 text-[16px] font-medium md:mb-5 md:text-[18px]">
             {{ $t(`landingPage.techStack.${category}`) }}:
           </h3>
           <TechCards :items="items" />

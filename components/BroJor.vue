@@ -11,13 +11,11 @@ function spin() {
     return
 
   isSpinning.value = true
-  partTwo.value?.style.setProperty('margin-left', '0')
 
   spinChars()
   spinChars2()
 
   setTimeout(() => {
-    partTwo.value?.style.setProperty('margin-left', '-4px')
   }, 3 * 300)
 
   setTimeout(() => {
@@ -29,8 +27,8 @@ onMounted(spin)
 </script>
 
 <template>
-  <span class="font-special" @mouseover="spin">
+  <span @mouseover="spin">
     <span ref="partOne" class="text-[#00D7B8]">Bro</span>
-    <span ref="partTwo">Jor</span>
+    <span ref="partTwo">jor</span>
   </span>
 </template>
