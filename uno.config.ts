@@ -39,7 +39,7 @@ export default defineConfig({
       'white-soft': '#ddd',
     },
     fontFamily: {
-      'landing-page': 'Geist Mono',
+      'landing-page': 'Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
       'mono': 'DM Mono',
       'sans': 'Inter',
     },
