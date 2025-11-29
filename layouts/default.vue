@@ -40,14 +40,14 @@ useSchemaOrg([
         </template>
       </Head>
       <Body class="font-sans bg-default text-default">
-        <header class="fixed left-0 right-0 top-0 z-50 flex items-center justify-between bg-white/70 px-4 py-2 header-backdrop dark:bg-zinc-950/70 sm:px-6">
+        <header class="fixed left-0 right-0 top-0 z-50 flex items-center justify-between bg-white/70 p-4 header-backdrop dark:bg-zinc-950/70 sm:px-6">
           <Logo />
           <div class="flex items-center gap-2">
             <NuxtLinkLocale to="/blog" class="mr-2 flex items-center gap-1 text-lg font-medium transition-colors hover:text-strong">
               <Icon name="material-symbols:article-outline" class="h-6 w-6" />
               Blog
             </NuxtLinkLocale>
-            <ThemeSwitcher />
+            <!-- <ThemeSwitcher /> -->
             <LanguageSwitcher />
           </div>
         </header>
