@@ -1,5 +1,6 @@
 <script setup>
 import techstack from '@/assets/data/techstack.json'
+import profilePhoto from '@/assets/profile-photo.png'
 
 definePageMeta({
   title: 'welcome',
@@ -7,16 +8,24 @@ definePageMeta({
 </script>
 
 <template>
-  <main class="mx-auto max-w-[65ch]">
-    <section class="my-16 md:my-32">
-      <h1 class="text-4xl font-bold md:text-6xl">
-        {{ $t('landingPage.hi') }}, <br>
-        {{ $t('landingPage.iAm') }} <BroJor />,
-        <br>{{ $t('landingPage.webDeveloper') }}.
-      </h1>
-      <p class="mt-4 text-lg md:mt-5 md:text-xl">
-        {{ $t('landingPage.description') }}
-      </p>
+  <main class="mx-auto max-w-[75ch]">
+    <section class="my-16 flex flex-col items-center md:my-32 md:flex-row">
+      <div class="[container-type:inline-size] w-full md:w-[65%]">
+        <h1 class="text-[clamp(1.75rem,8cqw,3.5rem)] font-bold leading-tight">
+          {{ $t('landingPage.hi') }}, <br>
+          {{ $t('landingPage.iAm') }} <BroJor />,
+          <br>{{ $t('landingPage.webDeveloper') }}.
+        </h1>
+        <p class="mt-4 text-[clamp(1.125rem,4cqw,1.75rem)] md:mt-5">
+          {{ $t('landingPage.description') }}
+        </p>
+      </div>
+      <div class="hidden w-full md:w-[35%] md:flex md:justify-end">
+        <img
+          :src="profilePhoto"
+          alt="Profile photo"
+        >
+      </div>
     </section>
     <section>
       <h2 :id="`${$t('landingPage.techStack.title')}`" class="text-2xl font-semibold md:text-3xl">
