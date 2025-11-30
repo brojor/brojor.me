@@ -86,6 +86,7 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
     '@vueuse/nuxt',
     '@nuxt/icon',
+    'nuxt-umami',
   ],
   runtimeConfig: {
     public: {
