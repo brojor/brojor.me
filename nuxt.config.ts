@@ -102,7 +102,7 @@ export default defineNuxtConfig({
     ],
   },
   umami: {
-    host: 'https://umami.brojor.me',
-    id: '986f9555-a094-44b7-9ec6-cb8fc49614df',
+    host: process.env.NUXT_PUBLIC_UMAMI_HOST,
+    id: process.env.NUXT_PUBLIC_UMAMI_ID,
   },
 })
