@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "nuxt preview",
-    "prepare": "pnpm dlx simple-git-hooks",
+    "prepare": "simple-git-hooks",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
