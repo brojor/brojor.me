@@ -86,6 +86,7 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
     '@vueuse/nuxt',
     '@nuxt/icon',
+    'nuxt-umami',
   ],
   runtimeConfig: {
     public: {
@@ -99,5 +100,9 @@ export default defineNuxtConfig({
     sources: [
       '/api/__sitemap__/urls',
     ],
+  },
+  umami: {
+    host: process.env.NUXT_PUBLIC_UMAMI_HOST,
+    id: process.env.NUXT_PUBLIC_UMAMI_ID,
   },
 })
